@@ -1,0 +1,315 @@
+﻿<UserControl 
+    x:Class="VNCCodeCommandConsole.User_Interface.User_Controls.wucConfigurationOptions"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    xmlns:local="clr-namespace:VNCCodeCommandConsole.User_Interface.User_Controls"
+    mc:Ignorable="d"
+    
+    xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" 
+    xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars"     
+    xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+    xmlns:dxdb="http://schemas.devexpress.com/winfx/2008/xaml/demobase"
+    xmlns:dxdo="http://schemas.devexpress.com/winfx/2008/xaml/docking"  
+    xmlns:dxlc="http://schemas.devexpress.com/winfx/2008/xaml/layoutcontrol"
+    xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"
+    
+    xmlns:uiuc="clr-namespace:VNCCodeCommandConsole.User_Interface.User_Controls"
+    xmlns:uiw="clr-namespace:VNCCodeCommandConsole.User_Interface.Windows"
+    
+    xmlns:vca="clr-namespace:VNC.CodeAnalysis.SyntaxNode;assembly=VNC.CodeAnalysis"
+    xmlns:vxe="clr-namespace:VNC.Xaml.Enums;assembly=VNC.XamlHelper"    
+    
+    xmlns:cb="clr-namespace:CalcBinding;assembly=CalcBinding"     
+    
+    d:DesignHeight="600" d:DesignWidth="200"
+    d:DesignStyle="{StaticResource myDesignStyle}">
+    
+    <dxlc:LayoutGroup MinWidth="200"  Orientation="Vertical">
+        
+        <dxlc:LayoutGroup Header="Output Options" 
+        	View="GroupBox" Orientation="Vertical">
+
+            <dxe:CheckEdit x:Name="ceListImpactedFilesOnly" 
+                           Content="List Impacted Files Only" 
+                           IsChecked="False" VerticalAlignment="Top" />
+
+            <dxe:CheckEdit x:Name="ceAlwaysDisplayFileName" 
+                           Content="Always Display File Name" 
+                           IsChecked="False" VerticalAlignment="Top" />
+
+            <dx:GroupFrame Header="SyntaxWalkerDepth" VerticalAlignment="Top">
+                <dxe:ListBoxEdit Name="lbeSyntaxWalkerDepth" 
+                             ValueMember="Content" 
+                             SelectedIndex="0"                                                         
+                             ShowBorder="False" Background="{x:Null}">
+                    <dxe:ListBoxEdit.StyleSettings>
+                        <dxe:RadioListBoxEditStyleSettings />
+                    </dxe:ListBoxEdit.StyleSettings>
+                    <dxe:ListBoxEdit.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <StackPanel Orientation="Vertical" />
+                        </ItemsPanelTemplate>
+                    </dxe:ListBoxEdit.ItemsPanel>
+                    <dxe:ListBoxEdit.Items>
+                        <dxe:ListBoxEditItem Content="StructuredTrivia" />
+                        <dxe:ListBoxEditItem Content="Node" />
+                        <dxe:ListBoxEditItem Content="Token" />
+                        <dxe:ListBoxEditItem Content="Trivia" />
+                    </dxe:ListBoxEdit.Items>
+                </dxe:ListBoxEdit>
+            </dx:GroupFrame>
+
+
+            
+            <dxlc:LayoutItem>
+                 <dxe:CheckEdit x:Name="ceDisplaySourceLocation" 
+                                    Content="Display Source Location" 
+                                    IsChecked="False" VerticalAlignment="Top" />           	
+            </dxlc:LayoutItem>
+ 
+            <dxlc:LayoutItem>
+                <dxe:CheckEdit x:Name="ceDisplayCRC32" 
+                                    Content="Display CRC32" 
+                                    IsChecked="False" VerticalAlignment="Top" />
+            </dxlc:LayoutItem>
+                
+            <dx:GroupFrame Header="Additional Node Analysis" VerticalAlignment="Top"
+                           Visibility="{cb:Binding ElementName=ceDisplayCRC32, Path=IsChecked}">
+                <dxlc:LayoutGroup
+                	Orientation="Vertical">
+
+                    <dxe:ComboBoxEdit Name="lbeAdditionalNodes" 
+                                 ItemsSource="{Binding Source={vxe:EnumBindingSource {x:Type vca:AdditionalNodes}}}"
+                                 SelectedIndex="0"                                                         
+                                 ShowBorder="False" Background="{x:Null}">
+                    </dxe:ComboBoxEdit>
+
+                    <dxlc:LayoutItem>
+                        <dxe:CheckEdit x:Name="ceDisplay_NodeKind" Content="Display Node Kind" />
+                    </dxlc:LayoutItem>
+
+                    <dxlc:LayoutItem>
+                        <dxe:CheckEdit x:Name="ceDisplay_NodeValue" Content="Display Node Value" />
+                    </dxlc:LayoutItem>
+
+                    <dxlc:LayoutItem>
+                        <dxe:CheckEdit x:Name="ceIncludeStatementBlockInCRC" Content="Inlcude StatementBlock in CRC" />
+                    </dxlc:LayoutItem>
+
+                    <!--<dxlc:LayoutItem>
+                        <dxe:CheckEdit x:Name="ceDisplay_FormattedOutput" Content="Display Formatted Output" />
+                    </dxlc:LayoutItem>-->
+
+                    <!--</dxlc:LayoutGroup>-->
+                </dxlc:LayoutGroup>
+            </dx:GroupFrame>
+            
+            <dxlc:LayoutItem>
+                
+                <dxe:CheckEdit x:Name="ceReplaceCRLF" 
+                                    Content="Replace CRLF in Key" 
+                                    IsChecked="False" VerticalAlignment="Top" />
+            </dxlc:LayoutItem>
+
+            <dxlc:LayoutItem>
+
+                <dxe:CheckEdit x:Name="ceDisplay_StatementBlock" 
+                                Content="Display Statement Block" 
+                                IsChecked="False" />
+            </dxlc:LayoutItem>
+            
+            <dxlc:LayoutItem>
+
+                <dxe:CheckEdit x:Name="ceDisplay_NodeParent" 
+                                Content="Display Node Parent" 
+                                IsChecked="False" />
+            </dxlc:LayoutItem>
+            
+            <dxlc:LayoutItem>
+
+                <dxe:CheckEdit x:Name="ceDisplayContext" 
+                                Content="Display Context" 
+                                IsChecked="False" />
+            </dxlc:LayoutItem>
+
+            <dxlc:LayoutGroup
+                View="GroupBox"
+                Orientation="Vertical"
+                Visibility="{cb:Binding ElementName=ceDisplayContext, Path=IsChecked}">
+
+                <dxe:CheckEdit x:Name="ceDisplayClassOrModuleName" 
+                                Content="Class or Module Name" 
+                                IsChecked="False" VerticalAlignment="Top" />
+
+                <dxe:CheckEdit x:Name="ceDisplayMethodName" 
+                                Content="Method Name" 
+                                IsChecked="False" VerticalAlignment="Top" />
+
+                <dxe:CheckEdit x:Name="ceDisplayContainingMethodBlock" 
+                                Content="Containing Method Block" 
+                                IsChecked="False" VerticalAlignment="Top" />
+
+                <dxe:CheckEdit x:Name="ceDisplayContainingBlock" 
+                                Content="ContainingBlock" 
+                                IsChecked="False" VerticalAlignment="Top" />
+                
+                <dxe:CheckEdit x:Name="ceInTryBlock" 
+                                Content="In Try Block" 
+                                IsChecked="False" VerticalAlignment="Top" />
+
+                <dxe:CheckEdit x:Name="ceInWhileBlock" 
+                                Content="In While Block" 
+                                IsChecked="False" VerticalAlignment="Top" />
+
+                <dxe:CheckEdit x:Name="ceInForBlock" 
+                                Content="In For Block" 
+                                IsChecked="False" VerticalAlignment="Top" />
+
+                <dxe:CheckEdit x:Name="ceInIfBlock" 
+                                Content="In If Block" 
+                                IsChecked="False" VerticalAlignment="Top" />
+            
+            </dxlc:LayoutGroup>
+
+            <dxlc:LayoutGroup
+                	Orientation="Vertical">
+                
+                <dxlc:LayoutItem>
+                    <dxe:CheckEdit x:Name="ceDisplayResults" 
+                                   Content="Display Results" 
+                                   IsChecked="True"/>
+                </dxlc:LayoutItem>
+
+                <dxlc:LayoutItem>
+                    <dxe:CheckEdit x:Name="ceDisplaySummary"
+                                   Content="Display Summary" 
+                                   IsChecked="True"/>
+                </dxlc:LayoutItem>
+
+                <dxlc:LayoutItem Label="Display Summary Minimum" 
+                                 LabelPosition="Left"
+                                 Visibility="{cb:Binding ElementName=ceDisplaySummary, Path=IsChecked, Mode=OneWay}">
+                    <dxe:SpinEdit x:Name="sbDisplaySummaryMinimum" 
+                                  MinValue="1" Value="1" HorizontalAlignment="Left" />
+                </dxlc:LayoutItem>
+
+            </dxlc:LayoutGroup>
+
+            <dxlc:LayoutItem>
+
+                <dxe:CheckEdit x:Name="ceAllTypes" 
+                                Content="All Types" 
+                                IsChecked="True" />
+            </dxlc:LayoutItem>
+
+            <dxlc:LayoutGroup
+                View="GroupBox"
+                Orientation="Vertical"
+                Visibility="{cb:Binding ElementName=ceAllTypes, Path=! IsChecked}">
+
+                <dxlc:LayoutItem>
+                    <dxe:CheckEdit x:Name="ceHasAttributes" 
+                                   Content="Has Attributes" 
+                                   IsChecked="{cb:Binding ElementName=ceAllTypes, Path=IsChecked, Mode=OneWay}"/>
+                </dxlc:LayoutItem>
+
+                <dxlc:LayoutItem>
+                    <dxe:CheckEdit x:Name="ceIsBoolean" 
+                                   Content="Is Boolean" 
+                                   IsChecked="{cb:Binding ElementName=ceAllTypes, Path=IsChecked, Mode=OneWay}"/>
+                </dxlc:LayoutItem>
+
+                <dxlc:LayoutItem>
+                    <dxe:CheckEdit x:Name="ceIsByte" 
+                                   Content="Is Byte" 
+                                   IsChecked="{cb:Binding ElementName=ceAllTypes, Path=IsChecked, Mode=OneWay}"/>
+                </dxlc:LayoutItem>
+
+                <dxlc:LayoutItem>
+                    <dxe:CheckEdit x:Name="ceIsDataTable" 
+                                   Content="Is DataTable" 
+                                   IsChecked="{cb:Binding ElementName=ceAllTypes, Path=IsChecked, Mode=OneWay}"/>
+                </dxlc:LayoutItem>
+
+                <dxlc:LayoutItem>
+                    <dxe:CheckEdit x:Name="ceIsDate" 
+                                   Content="Is Date" 
+                                   IsChecked="{cb:Binding ElementName=ceAllTypes, Path=IsChecked, Mode=OneWay}"/>
+                </dxlc:LayoutItem>
+
+                <dxlc:LayoutItem>
+                    <dxe:CheckEdit x:Name="ceIsDateTime" 
+                                   Content="Is DateTime" 
+                                   IsChecked="{cb:Binding ElementName=ceAllTypes, Path=IsChecked, Mode=OneWay}"/>
+                </dxlc:LayoutItem>
+
+                <dxlc:LayoutItem>
+                    <dxe:CheckEdit x:Name="ceIsInt16" 
+                                   Content="Is Int16" 
+                                   IsChecked="{cb:Binding ElementName=ceAllTypes, Path=IsChecked, Mode=OneWay}"/>
+                </dxlc:LayoutItem>
+
+                <dxlc:LayoutItem>
+                    <dxe:CheckEdit x:Name="ceIsInt32" 
+                                   Content="Is Int32" 
+                                   IsChecked="{cb:Binding ElementName=ceAllTypes, Path=IsChecked, Mode=OneWay}"/>
+                </dxlc:LayoutItem>
+
+                <dxlc:LayoutItem>
+                    <dxe:CheckEdit x:Name="ceIsInteger" 
+                                   Content="Is Integer" 
+                                   IsChecked="{cb:Binding ElementName=ceAllTypes, Path=IsChecked, Mode=OneWay}"/>
+                </dxlc:LayoutItem>
+
+                <dxlc:LayoutItem>
+                    <dxe:CheckEdit x:Name="ceIsLong" 
+                                   Content="Is Long" 
+                                   IsChecked="{cb:Binding ElementName=ceAllTypes, Path=IsChecked, Mode=OneWay}"/>
+                </dxlc:LayoutItem>
+
+                <dxlc:LayoutItem>
+                    <dxe:CheckEdit x:Name="ceIsSingle" 
+                                   Content="Is Single" 
+                                   IsChecked="{cb:Binding ElementName=ceAllTypes, Path=IsChecked, Mode=OneWay}"/>
+                </dxlc:LayoutItem>
+
+                <dxlc:LayoutItem>
+                    <dxe:CheckEdit x:Name="ceIsString" 
+                                   Content="Is String" 
+                                   IsChecked="{cb:Binding ElementName=ceAllTypes, Path=IsChecked, Mode=OneWay}"/>
+                </dxlc:LayoutItem>
+
+                <dxlc:LayoutItem>
+                    <dxe:CheckEdit x:Name="ceOtherTypes" 
+                                   Content="Is OtherType" 
+                                   IsChecked="{cb:Binding ElementName=ceAllTypes, Path=IsChecked, Mode=OneWay}"/>
+                </dxlc:LayoutItem>
+
+            </dxlc:LayoutGroup>
+
+        </dxlc:LayoutGroup>
+
+        <dxlc:LayoutGroup Header="Rewriter Options" 
+        	View="GroupBox" Orientation="Vertical">
+
+            <dxlc:LayoutGroup
+            	Orientation="Vertical" VerticalAlignment="Top">
+                
+                <dxe:CheckEdit x:Name="ceAddFileSuffix" Content="Add FileSuffix" IsChecked="False" />
+                
+                <dxlc:LayoutItem Label="File Suffix" ToolTip="Added to name of modified file"
+                                 Visibility="{cb:Binding ElementName=ceAddFileSuffix, Path=IsChecked}">
+                    
+                <dxe:TextEdit x:Name="teFileSuffix" Text="2"
+                                  Visibility="{cb:Binding ElementName=ceAddFileSuffix, Path=IsChecked}"               
+                                  IsEnabled="True"/>
+                </dxlc:LayoutItem>
+            </dxlc:LayoutGroup>
+            
+        </dxlc:LayoutGroup>
+
+    </dxlc:LayoutGroup>
+    
+</UserControl>
