@@ -8,7 +8,7 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>VNCCodeCommandConsole</RootNamespace>
     <AssemblyName>VNCCodeCommandConsole</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WarningLevel>4</WarningLevel>
@@ -150,23 +150,12 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\Common\VNC.AssemblyHelper.dll</HintPath>
     </Reference>
-    <Reference Include="VNC.Core">
-      <HintPath>..\..\Common\VNC.Core.dll</HintPath>
-    </Reference>
     <Reference Include="VNC.Helper">
       <HintPath>..\..\Common\VNC.Helper.dll</HintPath>
-    </Reference>
-    <Reference Include="VNC.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=6621de8a79b51ca3, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Common\VNC.Logging.dll</HintPath>
     </Reference>
     <Reference Include="VNC.WPFUserControls, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\Common\VNC.WPFUserControls.dll</HintPath>
-    </Reference>
-    <Reference Include="VNC.XamlHelper, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Common\VNC.XamlHelper.dll</HintPath>
     </Reference>
     <Reference Include="WindowsBase">
       <Private>True</Private>
@@ -608,11 +597,14 @@
     <PackageReference Include="System.Xml.ReaderWriter">
       <Version>4.3.1</Version>
     </PackageReference>
+    <PackageReference Include="VNC.CoreNF">
+      <Version>1.0.0</Version>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\VNC.CodeAnalysis\VNC.CodeAnalysis.csproj">
+    <ProjectReference Include="..\vnc\VNC.CodeAnalysis\VNC.CodeAnalysisNF.csproj">
       <Project>{9d21b031-3bfe-44b1-a622-d500230f90a7}</Project>
-      <Name>VNC.CodeAnalysis</Name>
+      <Name>VNC.CodeAnalysisNF</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

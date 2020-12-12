@@ -21,7 +21,7 @@
     xmlns:ui="clr-namespace:VNCCodeCommandConsole.User_Interface" 
     xmlns:uiuc="clr-namespace:VNCCodeCommandConsole.User_Interface.User_Controls"
     xmlns:uiw="clr-namespace:VNCCodeCommandConsole.User_Interface.Windows"
-    xmlns:vxe="clr-namespace:VNC.Xaml.Enums;assembly=VNC.XamlHelper"
+    xmlns:vcxe="clr-namespace:VNC.Core.Xaml.Enums;assembly=VNC.CoreNF"  
     xmlns:vca="clr-namespace:VNC.CodeAnalysis.SyntaxNode;assembly=VNC.CodeAnalysis"
 
     d:DesignWidth="800" d:DesignHeight="600"
@@ -66,7 +66,7 @@
 
             <dx:GroupFrame Header="Node Retrieval" VerticalAlignment="Top">
                 <dxe:ComboBoxEdit Name="lbeNodes" 
-                                 ItemsSource="{Binding Source={vxe:EnumBindingSource {x:Type vca:AdditionalNodes}}}"
+                                 ItemsSource="{Binding Source={vcxe:EnumBindingSource {x:Type vca:AdditionalNodes}}}"
                                  SelectedIndex="0"                                                         
                                  ShowBorder="False" Background="{x:Null}">
                 </dxe:ComboBoxEdit>

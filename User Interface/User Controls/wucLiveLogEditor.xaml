@@ -18,7 +18,7 @@
     xmlns:sys="clr-namespace:System;assembly=mscorlib"
     xmlns:ui="clr-namespace:VNCCodeCommandConsole.User_Interface"
     xmlns:uiuc="clr-namespace:VNCCodeCommandConsole.User_Interface.User_Controls"
-    xmlns:vxe="clr-namespace:VNC.Xaml.Enums;assembly=VNC.XamlHelper"
+    xmlns:vcxe="clr-namespace:VNC.Core.Xaml.Enums;assembly=VNC.CoreNF"  
     mc:Ignorable="d"
     d:DesignHeight="800"
     d:DesignWidth="1000"
@@ -426,7 +426,7 @@
                                                 <dxlc:LayoutItem HorizontalAlignment="Center" Label="Display Layout">
                                                     <dxe:ComboBoxEdit x:Name="cbeRichEditViewType"
                                                         EditValueChanged="CbeRichEditViewType_EditValueChanged"
-                                                        ItemsSource="{Binding Source={vxe:EnumBindingSource {x:Type drec:RichEditViewType}}}"
+                                                        ItemsSource="{Binding Source={vcxe:EnumBindingSource {x:Type drec:RichEditViewType}}}"
                                                         SelectedIndex="0" />
                                                 </dxlc:LayoutItem>
                                                 <dxlc:LayoutItem HorizontalAlignment="Right"
