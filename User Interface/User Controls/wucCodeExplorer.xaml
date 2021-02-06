@@ -33,7 +33,7 @@
 
     </uiuc:wucDXBase.Resources>
 
-        <dxlc:LayoutControl Name="lc_Root"                          
+    <dxlc:LayoutControl Name="lc_Root"                          
                       Orientation="Vertical"
                       Background="Transparent"
                       VerticalAlignment="Stretch"
@@ -261,8 +261,6 @@
                                     </dxlc:LayoutItem>-->
 
                                 </dxlc:LayoutGroup>
-
-
 
                             </dxlc:LayoutGroup>
 
