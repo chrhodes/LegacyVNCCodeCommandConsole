@@ -24,7 +24,7 @@
     
     xmlns:cb="clr-namespace:CalcBinding;assembly=CalcBinding" 
     
-    xmlns:vxe="clr-namespace:VNC.Xaml.Enums;assembly=VNC.XamlHelper"
+    xmlns:vxe="clr-namespace:VNC.Core.Xaml.Enums;assembly=VNC.Core"
     xmlns:vcasn="clr-namespace:VNC.CodeAnalysis.SyntaxNode;assembly=VNC.CodeAnalysis"    
 
     d:DesignWidth="300" d:DesignHeight="800"

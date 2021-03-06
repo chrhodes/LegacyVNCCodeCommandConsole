@@ -18,7 +18,7 @@
     xmlns:sys="clr-namespace:System;assembly=mscorlib"
     xmlns:ui="clr-namespace:VNCCodeCommandConsole.User_Interface"
     xmlns:uiuc="clr-namespace:VNCCodeCommandConsole.User_Interface.User_Controls"
-    xmlns:vcxe="clr-namespace:VNC.Core.Xaml.Enums;assembly=VNC.CoreNF"  
+    xmlns:vcxe="clr-namespace:VNC.Core.Xaml.Enums;assembly=VNC.Core"  
     mc:Ignorable="d"
     d:DesignHeight="800"
     d:DesignWidth="1000"

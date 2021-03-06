@@ -199,7 +199,7 @@ namespace VNCCodeCommandConsole.User_Interface
 
         public static void DisplayOptionsVisibility(ContentControl control)
         {
-            var adminOptions = VNC.Xaml.PhysicalTree.FindChild<WrapPanel>(control, "AdminOptions");
+            var adminOptions = VNC.Core.Xaml.PhysicalTree.FindChild<WrapPanel>(control, "AdminOptions");
 
             if (adminOptions == null)
             {
@@ -216,7 +216,7 @@ namespace VNCCodeCommandConsole.User_Interface
                 ((WrapPanel)adminOptions).Visibility = Visibility.Hidden;
             }
 
-            var developerOptions = VNC.Xaml.PhysicalTree.FindChild<WrapPanel>(control, "DeveloperOptions");
+            var developerOptions = VNC.Core.Xaml.PhysicalTree.FindChild<WrapPanel>(control, "DeveloperOptions");
 
             if (developerOptions == null)
             {
@@ -282,7 +282,7 @@ namespace VNCCodeCommandConsole.User_Interface
         {
             if (Common.UserMode.Administrator || Common.UserMode.Advanced)
             {
-                var cc_DisplayOptions = VNC.Xaml.PhysicalTree.FindChild<ContentControl>(window, "cc_DisplayOptions");
+                var cc_DisplayOptions = VNC.Core.Xaml.PhysicalTree.FindChild<ContentControl>(window, "cc_DisplayOptions");
 
                 if (cc_DisplayOptions == null)
                 {
@@ -290,7 +290,7 @@ namespace VNCCodeCommandConsole.User_Interface
                     return;
                 }
 
-                var adminOptions = VNC.Xaml.PhysicalTree.FindChild<WrapPanel>(cc_DisplayOptions, "AdminOptions");
+                var adminOptions = VNC.Core.Xaml.PhysicalTree.FindChild<WrapPanel>(cc_DisplayOptions, "AdminOptions");
 
                 if (adminOptions == null)
                 {
@@ -304,7 +304,7 @@ namespace VNCCodeCommandConsole.User_Interface
 
         public static void ReflectUserMode(wucDXBase window)
         {
-            var cc_DisplayOptions = VNC.Xaml.PhysicalTree.FindChild<ContentControl>(window, "cc_DisplayOptions");
+            var cc_DisplayOptions = VNC.Core.Xaml.PhysicalTree.FindChild<ContentControl>(window, "cc_DisplayOptions");
 
             if (cc_DisplayOptions == null)
             {
@@ -312,7 +312,7 @@ namespace VNCCodeCommandConsole.User_Interface
                 return;
             }
 
-            var adminOptions = VNC.Xaml.PhysicalTree.FindChild<WrapPanel>(cc_DisplayOptions, "AdminOptions");
+            var adminOptions = VNC.Core.Xaml.PhysicalTree.FindChild<WrapPanel>(cc_DisplayOptions, "AdminOptions");
 
             if (adminOptions == null)
             {
@@ -360,7 +360,7 @@ namespace VNCCodeCommandConsole.User_Interface
             {
                 foreach (string ckDisplayColumn in ckDisplayColumns)
                 {
-                    var displayColumn = VNC.Xaml.PhysicalTree.FindChild<CheckBox>(contentControl, ckDisplayColumn);
+                    var displayColumn = VNC.Core.Xaml.PhysicalTree.FindChild<CheckBox>(contentControl, ckDisplayColumn);
                     if (displayColumn != null)
                     {
                         // Not clear why this is null on the first load of the program??

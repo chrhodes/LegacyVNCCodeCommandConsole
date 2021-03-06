@@ -12,7 +12,7 @@ using System.Windows;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("VNC")]
 [assembly: AssemblyProduct("VNCCodeCommandConsole")]
-[assembly: AssemblyCopyright("Copyright © 2017-2020")]
+[assembly: AssemblyCopyright("Copyright © 2017-2021")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -83,4 +83,4 @@ using System.Windows;
 //  1.0.0.0   mm/dd/yyyy    Developer
 //      Initial Version
 
-[assembly: AssemblyInformationalVersion("2020.09.23A")]
+[assembly: AssemblyInformationalVersion("2021.03.03A")]

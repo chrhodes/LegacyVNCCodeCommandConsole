@@ -69,7 +69,7 @@ namespace VNCCodeCommandConsole.User_Interface.Windows
             TableView tableView = null;
             GridControl gridControl = null;
 
-            var vtrootUserControl = VNC.Xaml.PhysicalTree.FindAncestor<UserControl>((DependencyObject)sender);
+            var vtrootUserControl = VNC.Core.Xaml.PhysicalTree.FindAncestor<UserControl>((DependencyObject)sender);
 
             if (vtrootUserControl != null)
             {
@@ -78,7 +78,7 @@ namespace VNCCodeCommandConsole.User_Interface.Windows
             }
             else
             {
-                var vtrootWindow = VNC.Xaml.PhysicalTree.FindAncestor<DXWindow>((DependencyObject)sender);
+                var vtrootWindow = VNC.Core.Xaml.PhysicalTree.FindAncestor<DXWindow>((DependencyObject)sender);
 
                 gridControl = (GridControl)vtrootWindow.FindName("dataGrid");
                 tableView = (TableView)vtrootWindow.FindName("tableView");

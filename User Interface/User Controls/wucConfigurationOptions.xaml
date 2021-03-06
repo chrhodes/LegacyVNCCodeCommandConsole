@@ -19,7 +19,7 @@
     xmlns:uiw="clr-namespace:VNCCodeCommandConsole.User_Interface.Windows"
     
     xmlns:vca="clr-namespace:VNC.CodeAnalysis.SyntaxNode;assembly=VNC.CodeAnalysis"
-    xmlns:vcxe="clr-namespace:VNC.Core.Xaml.Enums;assembly=VNC.CoreNF"    
+    xmlns:vcxe="clr-namespace:VNC.Core.Xaml.Enums;assembly=VNC.Core"    
     
     xmlns:cb="clr-namespace:CalcBinding;assembly=CalcBinding"     
     

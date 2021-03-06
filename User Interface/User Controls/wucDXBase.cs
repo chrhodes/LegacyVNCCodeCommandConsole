@@ -20,7 +20,7 @@ using DevExpress.Utils;
 
 using VNC;
 //using VNCCodeCommandConsole.User_Interface.Windows;
-using VNC.Xaml;
+using VNC.Core.Xaml;
 
 using DevExpress.Xpf.Grid;
 
