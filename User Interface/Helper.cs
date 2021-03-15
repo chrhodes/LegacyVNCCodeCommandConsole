@@ -8,6 +8,8 @@ using System.Windows;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.VisualBasic;
 
+using VNC;
+
 using VNCCA = VNC.CodeAnalysis;
 
 namespace VNCCodeCommandConsole.User_Interface
@@ -16,7 +18,7 @@ namespace VNCCodeCommandConsole.User_Interface
     {
         public static void DisplayAdminUserControl(string title, string userControlName)
         {
-            long startTicks = VNC.Log.Trace15("Start", Common.LOG_APPNAME);
+            long startTicks = Log.UTILITY("Enter", Common.LOG_APPNAME);
 
             try
             {
@@ -29,12 +31,12 @@ namespace VNCCodeCommandConsole.User_Interface
                 MessageBox.Show(ex.InnerException.ToString());
             }
 
-            VNC.Log.Trace15("Exit", Common.LOG_APPNAME, startTicks);
+            Log.UTILITY("Exit", Common.LOG_APPNAME, startTicks);
         }
 
         public static void ValidateDataFullyLoaded()
         {
-            long startTicks = VNC.Log.Trace15("Start", Common.LOG_APPNAME);
+            long startTicks = Log.UTILITY("Enter", Common.LOG_APPNAME);
 
             while (!Common.DataFullyLoaded)
             {
@@ -42,7 +44,7 @@ namespace VNCCodeCommandConsole.User_Interface
                 Thread.Sleep(2000);
             }
 
-            VNC.Log.Trace15("Exit", Common.LOG_APPNAME, startTicks);
+            Log.UTILITY("Exit", Common.LOG_APPNAME, startTicks);
         }
 
         public static void ProcessOperation(VNCCA.Types.SearchTreeCommand searchTreeCommand,
@@ -50,7 +52,7 @@ namespace VNCCodeCommandConsole.User_Interface
             User_Controls.wucCodeExplorerContext codeExplorerContext,
             User_Controls.wucConfigurationOptions configurationOptions)
         {
-            long startTicks = VNC.Log.Trace15("Start", Common.LOG_APPNAME);
+            long startTicks = Log.UTILITY("Enter", Common.LOG_APPNAME);
 
             StringBuilder sb = new StringBuilder();
             codeExplorer.teSourceCode.Clear();
@@ -186,7 +188,7 @@ namespace VNCCodeCommandConsole.User_Interface
 
             }
 
-            VNC.Log.Trace15("Exit", Common.LOG_APPNAME, startTicks);
+            Log.UTILITY("Exit", Common.LOG_APPNAME, startTicks);
         }
     }
 }

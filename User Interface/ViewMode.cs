@@ -37,8 +37,12 @@ namespace VNCCodeCommandConsole.User_Interface
 
         public ViewMode(int currentMode)
         {
+            long startTicks = Log.CONSTRUCTOR("Enter", Common.LOG_APPNAME);
+
             _CurrentMode = currentMode;
             InitOptionValues();
+
+            Log.CONSTRUCTOR("Exit", Common.LOG_APPNAME, startTicks);
         }
 
         #endregion
@@ -125,6 +129,7 @@ namespace VNCCodeCommandConsole.User_Interface
 
         public static void ApplyAuthorization(UserControl control)
         {
+            long startTicks = Log.PRESENTATION("Enter", Common.LOG_APPNAME);
 
             var found = control.FindName("cc_DisplayOptions");
             DisplayOptionsVisibility((ContentControl)found);
@@ -159,13 +164,15 @@ namespace VNCCodeCommandConsole.User_Interface
             found = control.FindName("ahg_Bottom");
             AutoHideGroupVisibility((AutoHideGroup)found);
 
+            Log.PRESENTATION("Exit", Common.LOG_APPNAME, startTicks);
+
         }
 
         public static void AutoHideGroupVisibility(AutoHideGroup control)
         {
             if (control == null)
             {
-                VNC.Log.Warning("control is null", Common.LOG_APPNAME);
+                Log.Warning("control is null", Common.LOG_APPNAME);
                 return;
             }
 
@@ -183,7 +190,7 @@ namespace VNCCodeCommandConsole.User_Interface
         {
             if (control == null)
             {
-                VNC.Log.Warning("control is null", Common.LOG_APPNAME);
+                Log.Warning("control is null", Common.LOG_APPNAME);
                 return;
             }
 
@@ -203,7 +210,7 @@ namespace VNCCodeCommandConsole.User_Interface
 
             if (adminOptions == null)
             {
-                VNC.Log.Warning(string.Format("Can't locate element {0}", "AdminOptions"), Common.LOG_APPNAME);
+                Log.Warning(string.Format("Can't locate element {0}", "AdminOptions"), Common.LOG_APPNAME);
                 return;
             }
 
@@ -220,7 +227,7 @@ namespace VNCCodeCommandConsole.User_Interface
 
             if (developerOptions == null)
             {
-                VNC.Log.Warning(string.Format("Can't locate element {0}", "DeveloperOptions"), Common.LOG_APPNAME);
+                Log.Warning(string.Format("Can't locate element {0}", "DeveloperOptions"), Common.LOG_APPNAME);
                 return;
             }
 
@@ -249,7 +256,7 @@ namespace VNCCodeCommandConsole.User_Interface
         {
             if (control == null)
             {
-                VNC.Log.Warning("control is null", Common.LOG_APPNAME);
+                Log.Warning("control is null", Common.LOG_APPNAME);
                 return;
             }
 
@@ -286,7 +293,7 @@ namespace VNCCodeCommandConsole.User_Interface
 
                 if (cc_DisplayOptions == null)
                 {
-                    VNC.Log.Warning(string.Format("Can't locate element {0}", "cc_DisplayOptions"), Common.LOG_APPNAME);
+                    Log.Warning(string.Format("Can't locate element {0}", "cc_DisplayOptions"), Common.LOG_APPNAME);
                     return;
                 }
 
@@ -294,7 +301,7 @@ namespace VNCCodeCommandConsole.User_Interface
 
                 if (adminOptions == null)
                 {
-                    VNC.Log.Warning(string.Format("Can't locate element {0}", "adminOptions"), Common.LOG_APPNAME);
+                    Log.Warning(string.Format("Can't locate element {0}", "adminOptions"), Common.LOG_APPNAME);
                     return;
                 }
 
@@ -308,7 +315,7 @@ namespace VNCCodeCommandConsole.User_Interface
 
             if (cc_DisplayOptions == null)
             {
-                VNC.Log.Warning(string.Format("Can't locate element {0}", "cc_DisplayOptions"), Common.LOG_APPNAME);
+                Log.Warning(string.Format("Can't locate element {0}", "cc_DisplayOptions"), Common.LOG_APPNAME);
                 return;
             }
 
@@ -316,7 +323,7 @@ namespace VNCCodeCommandConsole.User_Interface
 
             if (adminOptions == null)
             {
-                VNC.Log.Warning(string.Format("Can't locate element {0}", "adminOptions"), Common.LOG_APPNAME);
+                Log.Warning(string.Format("Can't locate element {0}", "adminOptions"), Common.LOG_APPNAME);
                 return;
             }
 
@@ -334,7 +341,7 @@ namespace VNCCodeCommandConsole.User_Interface
         {
             if (control == null)
             {
-                VNC.Log.Warning("control is null", Common.LOG_APPNAME);
+                Log.Warning("control is null", Common.LOG_APPNAME);
                 return;
             }
 
@@ -374,7 +381,7 @@ namespace VNCCodeCommandConsole.User_Interface
         {
             if (control == null)
             {
-                VNC.Log.Warning("control is null", Common.LOG_APPNAME);
+                Log.Warning("control is null", Common.LOG_APPNAME);
                 return;
             }
 

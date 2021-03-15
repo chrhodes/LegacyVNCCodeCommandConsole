@@ -820,12 +820,12 @@ namespace VNCCodeCommandConsole.Data
 
             try
             {
-                VNC.Log.Info(string.Format("Using CurrentDate {0} from Config File", configValue), Common.LOG_APPNAME, CLASS_BASE_ERRORNUMBER + 0);
+                Log.Info(string.Format("Using CurrentDate {0} from Config File", configValue), Common.LOG_APPNAME, CLASS_BASE_ERRORNUMBER + 0);
                 return Convert.ToDateTime(configValue);
             }
             catch (Exception ex)
             {
-                VNC.Log.Error(string.Format("Cannot convert {0} to DateTime {1}", configString, ex.ToString()), Common.LOG_APPNAME, CLASS_BASE_ERRORNUMBER + 0);
+                Log.Error(string.Format("Cannot convert {0} to DateTime {1}", configString, ex.ToString()), Common.LOG_APPNAME, CLASS_BASE_ERRORNUMBER + 0);
                 return null;
             }
         }
@@ -858,7 +858,7 @@ namespace VNCCodeCommandConsole.Data
 
             if (configValue.Length <= 0)
             {
-                VNC.Log.Info(string.Format("Empty Config File Information: {0}", configString), Common.LOG_APPNAME, CLASS_BASE_ERRORNUMBER + 5);
+                Log.Info(string.Format("Empty Config File Information: {0}", configString), Common.LOG_APPNAME, CLASS_BASE_ERRORNUMBER + 5);
                 //throw new ApplicationException(string.Format("Empty Config File Information: {0}", configString));
             }
 
@@ -907,7 +907,7 @@ namespace VNCCodeCommandConsole.Data
                             }
                             catch (Exception)
                             {
-                                VNC.Log.Error(string.Format("Invalid Config File Information: {0}", method.Name), Common.LOG_APPNAME, CLASS_BASE_ERRORNUMBER + 1);
+                                Log.Error(string.Format("Invalid Config File Information: {0}", method.Name), Common.LOG_APPNAME, CLASS_BASE_ERRORNUMBER + 1);
                                 result = false;
                             }
 
@@ -921,7 +921,7 @@ namespace VNCCodeCommandConsole.Data
                             }
                             catch (Exception)
                             {
-                                VNC.Log.Error(string.Format("Invalid Config File Information: {0}", method.Name), Common.LOG_APPNAME, CLASS_BASE_ERRORNUMBER + 1);
+                                Log.Error(string.Format("Invalid Config File Information: {0}", method.Name), Common.LOG_APPNAME, CLASS_BASE_ERRORNUMBER + 1);
                                 result = false;
                             }
 
@@ -934,7 +934,7 @@ namespace VNCCodeCommandConsole.Data
                             }
                             catch (Exception)
                             {
-                                VNC.Log.Error(string.Format("Invalid Config File Information: {0}", method.Name), Common.LOG_APPNAME, CLASS_BASE_ERRORNUMBER + 1);
+                                Log.Error(string.Format("Invalid Config File Information: {0}", method.Name), Common.LOG_APPNAME, CLASS_BASE_ERRORNUMBER + 1);
                                 result = false;
                             }
 

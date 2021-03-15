@@ -7,11 +7,12 @@ using System.Linq;
 using System.Windows;
 using System.Xml.Linq;
 
+using VNC;
+
 namespace VNCCodeCommandConsole.User_Interface.User_Controls
 {
     public partial class wucCodeExplorerContext : wucDXBase
     {
-        private static int CLASS_BASE_ERRORNUMBER = ErrorNumbers.APPERROR;
         private const string LOG_APPNAME = Common.LOG_APPNAME;
 
         #region Constructors
@@ -19,7 +20,7 @@ namespace VNCCodeCommandConsole.User_Interface.User_Controls
         public wucCodeExplorerContext()
         {
 #if TRACE
-            long startTicks = VNC.Log.Trace15("Start", LOG_APPNAME);
+            long startTicks = Log.CONSTRUCTOR("Enter", LOG_APPNAME);
 #endif
             try
             {
@@ -31,7 +32,7 @@ namespace VNCCodeCommandConsole.User_Interface.User_Controls
                 MessageBox.Show(ex.InnerException.ToString());
             }
 #if TRACE
-            VNC.Log.Trace15("End", LOG_APPNAME, startTicks);
+            Log.CONSTRUCTOR("End", LOG_APPNAME, startTicks);
 #endif
         }
 
@@ -42,7 +43,7 @@ namespace VNCCodeCommandConsole.User_Interface.User_Controls
         internal override void LoadControlContents()
         {
 #if TRACE
-            long startTicks = VNC.Log.Trace15("Start", LOG_APPNAME);
+            long startTicks = Log.PRESENTATION("Enter", LOG_APPNAME);
 #endif
             try
             {
@@ -54,14 +55,14 @@ namespace VNCCodeCommandConsole.User_Interface.User_Controls
                 MessageBox.Show(ex.ToString());
             }
 #if TRACE
-            VNC.Log.Trace15("End", LOG_APPNAME, startTicks);
+            Log.PRESENTATION("End", LOG_APPNAME, startTicks);
 #endif
         }
 
         internal override void OnLoaded(object sender, RoutedEventArgs e)
         {
 #if TRACE
-            long startTicks = VNC.Log.Trace15("Start", LOG_APPNAME);
+            long startTicks = Log.PRESENTATION("Enter", LOG_APPNAME);
 #endif
             // Cheat and force outcome if not using dat
             Common.DataFullyLoaded = true;
@@ -84,7 +85,7 @@ namespace VNCCodeCommandConsole.User_Interface.User_Controls
                 MessageBox.Show(ex.ToString());
             }
 #if TRACE
-            VNC.Log.Trace15("End", LOG_APPNAME, startTicks);
+            Log.PRESENTATION("End", LOG_APPNAME, startTicks);
 #endif
         }
 
@@ -95,7 +96,7 @@ namespace VNCCodeCommandConsole.User_Interface.User_Controls
         private void cbeSolutionFile_EditValueChanged(object sender, DevExpress.Xpf.Editors.EditValueChangedEventArgs e)
         {
 #if TRACE
-            long startTicks = VNC.Log.Trace15("Start", LOG_APPNAME);
+            long startTicks = Log.PRESENTATION("Enter", LOG_APPNAME);
 #endif
             try
             {
@@ -153,7 +154,7 @@ namespace VNCCodeCommandConsole.User_Interface.User_Controls
                 MessageBox.Show(ex.ToString());
             }
 #if TRACE
-            VNC.Log.Trace15("End", LOG_APPNAME, startTicks);
+            Log.PRESENTATION("End", LOG_APPNAME, startTicks);
 #endif
         }
         //private void XXX_Picker_ControlChanged()
@@ -164,7 +165,7 @@ namespace VNCCodeCommandConsole.User_Interface.User_Controls
         private void wucSourceBranch_Picker_ControlChanged()
         {
 #if TRACE
-            long startTicks = VNC.Log.Trace15("Start", LOG_APPNAME);
+            long startTicks = Log.PRESENTATION("Enter", LOG_APPNAME);
 #endif
             try
             {
@@ -191,13 +192,13 @@ namespace VNCCodeCommandConsole.User_Interface.User_Controls
                 MessageBox.Show(ex.ToString());
             }
 #if TRACE
-            VNC.Log.Trace15("End", LOG_APPNAME, startTicks);
+            Log.PRESENTATION("End", LOG_APPNAME, startTicks);
 #endif
         }
         private void btnBrowseForFile_Click(object sender, RoutedEventArgs e)
         {
 #if TRACE
-            long startTicks = VNC.Log.Trace15("Start", LOG_APPNAME);
+            long startTicks = Log.PRESENTATION("Enter", LOG_APPNAME);
 #endif
             OpenFileDialog openFileDialog1 = new OpenFileDialog();
 
@@ -212,7 +213,7 @@ namespace VNCCodeCommandConsole.User_Interface.User_Controls
                 teSourceFile.Text = fileName;
             }
 #if TRACE
-            VNC.Log.Trace15("End", LOG_APPNAME, startTicks);
+            Log.PRESENTATION("End", LOG_APPNAME, startTicks);
 #endif
         }
         private void btnClearFile_Click(object sender, RoutedEventArgs e)
@@ -237,10 +238,11 @@ namespace VNCCodeCommandConsole.User_Interface.User_Controls
 
 
         #endregion
+
         private void cbeProjectFile_EditValueChanged(object sender, DevExpress.Xpf.Editors.EditValueChangedEventArgs e)
         {
 #if TRACE
-            long startTicks = VNC.Log.Trace15("Start", LOG_APPNAME);
+            long startTicks = Log.PRESENTATION("Enter", LOG_APPNAME);
 #endif
             try
             {
@@ -281,14 +283,14 @@ namespace VNCCodeCommandConsole.User_Interface.User_Controls
                 MessageBox.Show(ex.ToString());
             }
 #if TRACE
-            VNC.Log.Trace15("End", LOG_APPNAME, startTicks);
+            Log.PRESENTATION("End", LOG_APPNAME, startTicks);
 #endif
         }
 
         private void cbeSourceFile_EditValueChanged(object sender, DevExpress.Xpf.Editors.EditValueChangedEventArgs e)
         {
 #if TRACE
-            long startTicks = VNC.Log.Trace15("Start", LOG_APPNAME);
+            long startTicks = Log.PRESENTATION("Enter", LOG_APPNAME);
 #endif
             try
             {
@@ -310,7 +312,7 @@ namespace VNCCodeCommandConsole.User_Interface.User_Controls
                 MessageBox.Show(ex.ToString());
             }
 #if TRACE
-            VNC.Log.Trace15("End", LOG_APPNAME, startTicks);
+            Log.PRESENTATION("End", LOG_APPNAME, startTicks);
 #endif
         }
 
@@ -330,7 +332,7 @@ namespace VNCCodeCommandConsole.User_Interface.User_Controls
         public List<String> GetFilesToProcess()
         {
 #if TRACE
-            long startTicks = VNC.Log.Trace15("Start", LOG_APPNAME);
+            long startTicks = Log.PRESENTATION("Enter", LOG_APPNAME);
 #endif
             List<String> filesToProcess = new List<string>();
 
@@ -424,7 +426,7 @@ namespace VNCCodeCommandConsole.User_Interface.User_Controls
             }
 
 #if TRACE
-            VNC.Log.Trace15($"End: filesToProcess.Count {filesToProcess.Count()}", LOG_APPNAME, startTicks);
+            Log.PRESENTATION($"End: filesToProcess.Count {filesToProcess.Count()}", LOG_APPNAME, startTicks);
 #endif
             return filesToProcess;
         }

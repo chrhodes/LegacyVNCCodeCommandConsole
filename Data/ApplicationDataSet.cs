@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Threading;
+
+using VNC;
+
 using ADSTA = VNCCodeCommandConsole.Data.ApplicationDataSetTableAdapters;
 
 namespace VNCCodeCommandConsole.Data
@@ -51,8 +54,8 @@ namespace VNCCodeCommandConsole.Data
                     }
                     catch (Exception ex)
                     {
-                        //VNC.Log.Error(string.Format("ConnectionString:>{0}<", Config.SQLMonitorDBConnection), LOG_APPNAME, CLASS_BASE_ERRORNUMBER + 1);
-                        //VNC.Log.Error(ex, LOG_APPNAME, CLASS_BASE_ERRORNUMBER + 2);
+                        //Log.Error(string.Format("ConnectionString:>{0}<", Config.SQLMonitorDBConnection), LOG_APPNAME, CLASS_BASE_ERRORNUMBER + 1);
+                        //Log.Error(ex, LOG_APPNAME, CLASS_BASE_ERRORNUMBER + 2);
                     }
                 }
 
@@ -67,13 +70,13 @@ namespace VNCCodeCommandConsole.Data
         public void LoadApplicationDataSetFromDB(Data.ApplicationDataSet applicationDS)
         {
 #if TRACE
-            long startTicksTotal = VNC.Log.Trace("Start", LOG_APPNAME, BASE_ERRORNUMBER + 3);
+            long startTicksTotal = Log.Trace("Enter", LOG_APPNAME, BASE_ERRORNUMBER + 3);
 #endif
             try
             {
                 long startTicks = 0;
 
-                VNC.Log.Info("Clearing ApplicationDataSet...", LOG_APPNAME);
+                Log.Info("Clearing ApplicationDataSet...", LOG_APPNAME);
                 applicationDS.Clear();
                 Common.DataFullyLoaded = false;
 
@@ -87,12 +90,12 @@ namespace VNCCodeCommandConsole.Data
             }
             catch (Exception ex)
             {
-                VNC.Log.Error(string.Format("ConnectionString:>{0}<", Config.ConnectionString), LOG_APPNAME, BASE_ERRORNUMBER + 60);
-                VNC.Log.Error(ex, LOG_APPNAME, BASE_ERRORNUMBER + 61);
+                Log.Error(string.Format("ConnectionString:>{0}<", Config.ConnectionString), LOG_APPNAME, BASE_ERRORNUMBER + 60);
+                Log.Error(ex, LOG_APPNAME, BASE_ERRORNUMBER + 61);
             }
 
 #if TRACE
-            VNC.Log.Trace("End", LOG_APPNAME, BASE_ERRORNUMBER + 62, startTicksTotal);
+            Log.Trace("End", LOG_APPNAME, BASE_ERRORNUMBER + 62, startTicksTotal);
 #endif
         }
 

@@ -6,6 +6,8 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
+using VNC;
+
 namespace VNCCodeCommandConsole
 {
     class ExternalProgram
@@ -29,6 +31,8 @@ namespace VNCCodeCommandConsole
         /// <returns></returns>
         public void Launch(string sFilePath, string sArgs, string sWorkingDir)
         {
+            Int64 startTicks = Log.APPLICATION($"Enter sFilePath:({sFilePath}) sArgs:({sArgs})", Common.LOG_APPNAME);
+
             m_sResult = "";
             m_oProc = new Process();
             ProcessStartInfo oInfo;
@@ -86,10 +90,14 @@ namespace VNCCodeCommandConsole
                 //return m_sResult;
             }
 
+            Log.APPLICATION("Exit", Common.LOG_APPNAME, startTicks);
+
         }
 
         public string Run(string sFilePath, string sArgs, string sInput, string sWorkingDir, int nWaitTime)
         {
+            Int64 startTicks = Log.APPLICATION($"Enter sFilePath:({sFilePath}) sArgs:({sArgs})", Common.LOG_APPNAME);
+
             m_sResult = "";
             m_oProc = new Process();
             ProcessStartInfo oInfo;
@@ -141,12 +149,18 @@ namespace VNCCodeCommandConsole
                 return m_sResult;
             }
             else return null;
+
+            Log.APPLICATION("Exit", Common.LOG_APPNAME, startTicks);
         }
 
         public static void SendFeedback()
         {
+            Int64 startTicks = Log.APPLICATION("Enter", Common.LOG_APPNAME);
+
             var win1 = new User_Interface.Windows.ProvideFeedback();
             win1.Show();
+
+            Log.APPLICATION("Exit", Common.LOG_APPNAME, startTicks);
         }
 
         #region Private Methods

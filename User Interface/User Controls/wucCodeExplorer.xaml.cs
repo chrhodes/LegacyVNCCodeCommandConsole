@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Windows;
 
+using VNC;
+
 namespace VNCCodeCommandConsole.User_Interface.User_Controls
 {
 
@@ -8,6 +10,8 @@ namespace VNCCodeCommandConsole.User_Interface.User_Controls
     {
         public wucCodeExplorer()
         {
+            long startTicks = Log.CONSTRUCTOR("Enter", Common.LOG_APPNAME);
+
             try
             {
                 InitializeComponent();
@@ -23,11 +27,15 @@ namespace VNCCodeCommandConsole.User_Interface.User_Controls
 
             //this.Width = (primaryScreenWidth * 9) / 10;
             //this.Height = (primaryScreenHeight * 9) / 10;
+
+            Log.CONSTRUCTOR("Exit", Common.LOG_APPNAME, startTicks);
         }
 
 
         void UpdateChildUserControls()
         {
+            long startTicks = Log.PRESENTATION("Enter", Common.LOG_APPNAME);
+
             // Tell child controls where to find controls they need
             // Output goes to controls on CodeExplorer
             // Input comes from controls on CodeExplorerContext
@@ -64,6 +72,8 @@ namespace VNCCodeCommandConsole.User_Interface.User_Controls
 
             wucCommandsWorkspace.CodeExplorer = this;
             wucCommandsWorkspace.CodeExplorerContext = wucCodeExplorerContext;
+
+            Log.PRESENTATION("Exit", Common.LOG_APPNAME, startTicks);
         }
 
         internal override void OnLoaded(object sender, RoutedEventArgs e)

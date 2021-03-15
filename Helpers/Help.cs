@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
+
+using VNC;
 
 namespace VNCCodeCommandConsole.Helpers
 {
@@ -11,6 +9,7 @@ namespace VNCCodeCommandConsole.Helpers
     {
         public static void GetHelpOnTopic(string helpTopic)
         {
+            Int64 startTicks = Log.APPLICATION($"Enter ()", Common.LOG_APPNAME);
 
             switch (helpTopic)
             {
@@ -35,6 +34,7 @@ namespace VNCCodeCommandConsole.Helpers
                     break;
             }
 
+            Log.APPLICATION("Exit", Common.LOG_APPNAME, startTicks);
         }
 
     }

@@ -9,6 +9,7 @@ using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.CodeAnalysis.MSBuild;
 using Microsoft.CodeAnalysis.Text;
 
+using VNC;
 using VNC.CodeAnalysis;
 
 using CS = Microsoft.CodeAnalysis.CSharp;
@@ -26,6 +27,8 @@ namespace VNCCodeCommandConsole.Commands
 
         internal static StringBuilder DisplayAllStructuredTriviaCS(string fileNameAndPath)
         {
+            Int64 startTicks = Log.APPLICATION($"Enter ({fileNameAndPath})", Common.LOG_APPNAME);
+
             StringBuilder sb = new StringBuilder();
 
             var sourceCode = "";
@@ -40,11 +43,15 @@ namespace VNCCodeCommandConsole.Commands
             walker.Messages = sb;
             walker.Visit(tree.GetRoot());
 
+            Log.APPLICATION("Exit", Common.LOG_APPNAME, startTicks);
+
             return sb;
         }
 
         internal static StringBuilder DisplayAllStructuredTriviaVB(string fileNameAndPath)
         {
+            Int64 startTicks = Log.APPLICATION($"Enter ({fileNameAndPath})", Common.LOG_APPNAME);
+
             StringBuilder sb = new StringBuilder();
             var sourceCode = "";
 
@@ -63,11 +70,15 @@ namespace VNCCodeCommandConsole.Commands
 
             sb.AppendFormat("CRC32:({0})", crc32);
 
+            Log.APPLICATION("Exit", Common.LOG_APPNAME, startTicks);
+
             return sb;
         }
 
         internal static StringBuilder ParseCSDepthNode(string sourceCode)
         {
+            Int64 startTicks = Log.APPLICATION($"Enter ({sourceCode})", Common.LOG_APPNAME);
+
             StringBuilder sb = new StringBuilder();
 
             SyntaxTree tree = CS.CSharpSyntaxTree.ParseText(sourceCode);
@@ -76,11 +87,15 @@ namespace VNCCodeCommandConsole.Commands
 
             walker.Visit(tree.GetRoot());
 
+            Log.APPLICATION("Exit", Common.LOG_APPNAME, startTicks);
+
             return sb;
         }
 
         internal static StringBuilder ParseVBDepthNode(string sourceCode, User_Interface.User_Controls.wucConfigurationOptions configurationOptions)
         {
+            Int64 startTicks = Log.APPLICATION($"Enter ({sourceCode})", Common.LOG_APPNAME);
+
             StringBuilder sb = new StringBuilder();
 
             SyntaxTree tree = VB.VisualBasicSyntaxTree.ParseText(sourceCode);
@@ -95,11 +110,15 @@ namespace VNCCodeCommandConsole.Commands
 
             sb.AppendFormat("CRC32:({0})", crc32);
 
+            Log.APPLICATION("Exit", Common.LOG_APPNAME, startTicks);
+
             return sb;
         }
 
         internal static StringBuilder ParseCSStructuredTrivia(string sourceCode)
         {
+            Int64 startTicks = Log.APPLICATION($"Enter ({sourceCode})", Common.LOG_APPNAME);
+
             StringBuilder sb = new StringBuilder();
 
             SyntaxTree tree = CS.CSharpSyntaxTree.ParseText(sourceCode);
@@ -108,11 +127,15 @@ namespace VNCCodeCommandConsole.Commands
 
             walker.Visit(tree.GetRoot());
 
+            Log.APPLICATION("Exit", Common.LOG_APPNAME, startTicks);
+
             return sb;
         }
 
         internal static StringBuilder ParseVBStructuredTrivia(string sourceCode, User_Interface.User_Controls.wucConfigurationOptions configurationOptions)
         {
+            Int64 startTicks = Log.APPLICATION($"Enter ({sourceCode})", Common.LOG_APPNAME);
+
             StringBuilder sb = new StringBuilder();
 
             SyntaxTree tree = VB.VisualBasicSyntaxTree.ParseText(sourceCode);
@@ -127,11 +150,15 @@ namespace VNCCodeCommandConsole.Commands
 
             sb.AppendFormat("CRC32:({0})", crc32);
 
+            Log.APPLICATION("Exit", Common.LOG_APPNAME, startTicks);
+
             return sb;
         }
 
         internal static StringBuilder ParseCSDepthToken(string sourceCode)
         {
+            Int64 startTicks = Log.APPLICATION($"Enter ({sourceCode})", Common.LOG_APPNAME);
+
             StringBuilder sb = new StringBuilder();
 
             SyntaxTree tree = CS.CSharpSyntaxTree.ParseText(sourceCode);
@@ -140,11 +167,15 @@ namespace VNCCodeCommandConsole.Commands
 
             walker.Visit(tree.GetRoot());
 
+            Log.APPLICATION("Exit", Common.LOG_APPNAME, startTicks);
+
             return sb;
         }
 
         internal static StringBuilder ParseVBDepthToken(string sourceCode, User_Interface.User_Controls.wucConfigurationOptions configurationOptions)
         {
+            Int64 startTicks = Log.APPLICATION($"Enter ({sourceCode})", Common.LOG_APPNAME);
+
             StringBuilder sb = new StringBuilder();
 
             SyntaxTree tree = VB.VisualBasicSyntaxTree.ParseText(sourceCode);
@@ -159,11 +190,15 @@ namespace VNCCodeCommandConsole.Commands
 
             sb.AppendFormat("CRC32:({0})", crc32);
 
+            Log.APPLICATION("Exit", Common.LOG_APPNAME, startTicks);
+
             return sb;
         }
 
         internal static StringBuilder ParseCSDepthTrivia(string sourceCode)
         {
+            Int64 startTicks = Log.APPLICATION($"Enter ({sourceCode})", Common.LOG_APPNAME);
+
             StringBuilder sb = new StringBuilder();
 
             SyntaxTree tree = CS.CSharpSyntaxTree.ParseText(sourceCode);
@@ -172,11 +207,15 @@ namespace VNCCodeCommandConsole.Commands
 
             walker.Visit(tree.GetRoot());
 
+            Log.APPLICATION("Exit", Common.LOG_APPNAME, startTicks);
+
             return sb;
         }
 
         internal static StringBuilder ParseVBDepthTrivia(string sourceCode, User_Interface.User_Controls.wucConfigurationOptions configurationOptions)
         {
+            Int64 startTicks = Log.APPLICATION($"Enter ({sourceCode})", Common.LOG_APPNAME);
+
             StringBuilder sb = new StringBuilder();
 
             SyntaxTree tree = VB.VisualBasicSyntaxTree.ParseText(sourceCode);
@@ -191,11 +230,15 @@ namespace VNCCodeCommandConsole.Commands
 
             sb.AppendFormat("CRC32:({0})", crc32);
 
+            Log.APPLICATION("Exit", Common.LOG_APPNAME, startTicks);
+
             return sb;
         }
 
         internal static StringBuilder EmitSourceVB(SyntaxTree syntaxTree)
         {
+            Int64 startTicks = Log.APPLICATION("Enter", Common.LOG_APPNAME);
+
             StringBuilder sb = new StringBuilder();
 
             //string sourceCode = "a=B+c;";
@@ -209,6 +252,8 @@ namespace VNCCodeCommandConsole.Commands
             //Console.WriteLine(tree.GetRoot().ToFullString());
 
             sb.Append(syntaxTree.GetRoot().ToFullString());
+
+            Log.APPLICATION("Exit", Common.LOG_APPNAME, startTicks);
 
             return sb;
         }

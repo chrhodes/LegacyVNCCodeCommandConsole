@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
+using VNC;
+
 namespace VNCCodeCommandConsole.User_Interface
 {
     public class ViewModeItem
@@ -17,9 +19,13 @@ namespace VNCCodeCommandConsole.User_Interface
 
         public ViewModeItem(string name, string value, ViewMode.Mode mode)
         {
+            long startTicks = Log.CONSTRUCTOR("Enter", Common.LOG_APPNAME);
+
             Name = name;
             Value = value;
             Mode = mode;
+
+            Log.CONSTRUCTOR("Exit", Common.LOG_APPNAME, startTicks);
         }
     }
 }

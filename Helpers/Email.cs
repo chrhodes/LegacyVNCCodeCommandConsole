@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
-//using System.DirectoryServices;
+
 using System.Net.Mail;
-using System.Text;
 
 using VNC;
-using VNCCodeCommandConsole;
+
 using VNCCodeCommandConsole.Data;
 
 namespace VNCCodeCommandConsole.Helpers
@@ -17,6 +15,8 @@ namespace VNCCodeCommandConsole.Helpers
 
         public static void SendEmail(string sTo, string sFrom, string sSubject, string sBody, string sCC)
         {
+            Int64 startTicks = Log.APPLICATION($"Enter sTo({sTo}) sFrom:({sFrom})", Common.LOG_APPNAME);
+
             using (MailMessage mailMessage = new MailMessage(sFrom, sTo, sSubject, sBody))
             {
                 // TODO(crhodes): Figure out how to do format types.
@@ -27,11 +27,15 @@ namespace VNCCodeCommandConsole.Helpers
                 }
 
                 SendEmail(mailMessage);
+
+                Log.APPLICATION("Exit", Common.LOG_APPNAME, startTicks);
             }
         }
 
         public static void SendEmail(string sTo, string sFrom, string sSubject, string sBody, string sCC, List<string> attachments)
         {
+            Int64 startTicks = Log.APPLICATION($"Enter sTo({sTo}) sFrom:({sFrom})", Common.LOG_APPNAME);
+
             using (MailMessage mailMessage = new MailMessage(sFrom, sTo, sSubject, sBody))
             {
                 //message.BodyFormat = MailFormat.Text;
@@ -46,11 +50,16 @@ namespace VNCCodeCommandConsole.Helpers
                 }
 
                 SendEmail(mailMessage);
+
+                Log.APPLICATION("Exit", Common.LOG_APPNAME, startTicks);
             }
         }
 
         public static void SendEmail(MailMessage message)
         {
+
+            Int64 startTicks = Log.APPLICATION("Enter", Common.LOG_APPNAME);
+
             if (Config.SMTP_Server != "")
             {
                 SmtpClient smtp = new SmtpClient(Config.SMTP_Server);
@@ -61,7 +70,7 @@ namespace VNCCodeCommandConsole.Helpers
                 }
                 catch (Exception ex)
                 {
-                    VNC.Log.Error(ex, Common.LOG_APPNAME, CLASS_BASE_ERRORNUMBER + 8);
+                    Log.Error(ex, Common.LOG_APPNAME, CLASS_BASE_ERRORNUMBER + 8);
                     throw new ApplicationException("Cannot Send Email");
                 }
             }
@@ -70,6 +79,8 @@ namespace VNCCodeCommandConsole.Helpers
                 // TODO(crhodes): Something about no SMTP
                 throw new ApplicationException("SMTP Server not configured");
             }
+
+            Log.APPLICATION("Exit", Common.LOG_APPNAME, startTicks);
         }
 
     }

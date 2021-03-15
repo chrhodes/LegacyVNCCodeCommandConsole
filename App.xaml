@@ -31,8 +31,8 @@
             <Style x:Key="dxlcGroup" TargetType="dxlc:LayoutGroup">
                 <!--<Setter Property="TitleBackground" Value="White"/>-->
                 <Setter Property="Background" Value="White"/>
-                <!--<Setter Property="VerticalAlignment" Value="Top"/>
-        <Setter Property="HorizontalAlignment" Value="Stretch"/>-->
+                <!--<Setter Property="VerticalAlignment" Value="Top"/>-->
+                <!--<Setter Property="HorizontalAlignment" Value="Stretch"/>-->
             </Style>
 
             <Style x:Key="dxlcGroupBox" TargetType="dxlc:GroupBox">

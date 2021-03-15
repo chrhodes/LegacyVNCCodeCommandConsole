@@ -5,7 +5,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
     xmlns:uiuc="clr-namespace:VNCCodeCommandConsole.User_Interface.User_Controls"
-    xmlns:VNCDxWPF="clr-namespace:VNC.WPFUserControls;assembly=VNC.WPFUserControls"    
+    xmlns:vncwpfpv="clr-namespace:VNC.WPF.Presentation.Views;assembly=VNC.WPF.Presentation"    
     
     mc:Ignorable="d" x:Name="splashWindow"
     WindowStyle="None" ResizeMode="NoResize" Width="800" Height="600"
@@ -41,7 +41,7 @@
                 <ProgressBar x:Name="progressBar" Height="12" Grid.Row="2" Margin="12" />
                 <DockPanel x:Name="Footer" Grid.Row="3" Margin="12">
                     <!--<TextBlock x:Name="Footer_Text" TextWrapping="Wrap" Text="Copyright © 1998-2011" Opacity="0.5" Foreground="#FF2D2D2D" HorizontalAlignment="Left" VerticalAlignment="Center"/>-->
-                    <VNCDxWPF:CylonEyeBall x:Name="cylonEyeBall1" Height="45" Width="85" DockPanel.Dock="Right" HorizontalAlignment="Right" />
+                    <vncwpfpv:CylonEyeBall x:Name="cylonEyeBall1" Height="45" Width="85" DockPanel.Dock="Right" HorizontalAlignment="Right" />
 
                     <!--<Image x:Name="Logotype" DockPanel.Dock="Right" Source="Logo.png" Stretch="None" HorizontalAlignment="Right"  />-->
                 </DockPanel>

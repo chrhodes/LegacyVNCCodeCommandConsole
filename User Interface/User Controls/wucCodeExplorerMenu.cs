@@ -30,11 +30,11 @@ namespace VNCCodeCommandConsole.User_Interface.User_Controls
         public wucCodeExplorerMenu()
         {
 #if TRACE
-            long startTicks = VNC.Log.Trace15("Enter", LOG_APPNAME, CLASS_BASE_ERRORNUMBER + 0);
+            long startTicks = Log.Trace15("Enter", LOG_APPNAME, CLASS_BASE_ERRORNUMBER + 0);
 #endif
             InitializeComponent();
 #if TRACE
-            VNC.Log.Trace15("Exit", LOG_APPNAME, CLASS_BASE_ERRORNUMBER + 2, startTicks);
+            Log.Trace15("Exit", LOG_APPNAME, CLASS_BASE_ERRORNUMBER + 2, startTicks);
 #endif
         }
 

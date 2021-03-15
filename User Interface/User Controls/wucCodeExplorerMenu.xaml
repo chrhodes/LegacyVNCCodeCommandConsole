@@ -11,7 +11,7 @@
     xmlns:localData="clr-namespace:VNCCodeCommandConsole.Data"              
     xmlns:my1="clr-namespace:VNCCodeCommandConsole.User_Interface.User_Controls"
     xmlns:uiuc="clr-namespace:VNCCodeCommandConsole.User_Interface.User_Controls"
-    xmlns:VNCDxWPF="clr-namespace:VNC.WPFUserControls;assembly=VNC.WPFUserControls"
+    xmlns:vncwpfpv="clr-namespace:VNC.WPF.Presentation.Views;assembly=VNC.WPF.Presentation"  
     Title="UI Menu"
     d:DesignWidth="1000" d:DesignHeight="600" 
     MinWidth="800" MinHeight="600">
@@ -206,7 +206,7 @@
                 
                 <TextBlock FontSize="16" HorizontalAlignment="Center" DockPanel.Dock="Top" FontWeight="Bold">UI Menu</TextBlock>
 
-                <VNCDxWPF:CylonEyeBall x:Name="cylonEyeBall1" DockPanel.Dock="Bottom"  Margin="5"/>
+                <vncwpfpv:CylonEyeBall x:Name="cylonEyeBall1" DockPanel.Dock="Bottom"  Margin="5"/>
                 
                 <ScrollViewer VerticalScrollBarVisibility="Auto" DockPanel.Dock="Left" >
                     

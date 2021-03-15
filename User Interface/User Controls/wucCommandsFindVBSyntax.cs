@@ -2,6 +2,8 @@
 using System.Text;
 using System.Windows;
 using DevExpress.Xpf.Editors;
+
+using VNC;
 using VNC.CodeAnalysis;
 
 using VNCCA = VNC.CodeAnalysis;
@@ -22,7 +24,7 @@ namespace VNCCodeCommandConsole.User_Interface.User_Controls
         public wucCommandsFindVBSyntax()
         {
             //#if TRACE
-            long startTicks = VNC.Log.Trace15("Start", LOG_APPNAME);
+            long startTicks = Log.Trace15("Enter", LOG_APPNAME);
             //#endif
             try
             {
@@ -34,7 +36,7 @@ namespace VNCCodeCommandConsole.User_Interface.User_Controls
                 MessageBox.Show(ex.InnerException.ToString());
             }
             //#if TRACE
-            VNC.Log.Trace15("End", LOG_APPNAME, startTicks);
+            Log.Trace15("End", LOG_APPNAME, startTicks);
             //#endif
         }
 
@@ -49,7 +51,7 @@ namespace VNCCodeCommandConsole.User_Interface.User_Controls
         internal override void OnLoaded(object sender, RoutedEventArgs e)
         {
             //#if TRACE
-            long startTicks = VNC.Log.Trace15("Start", LOG_APPNAME);
+            long startTicks = Log.Trace15("Enter", LOG_APPNAME);
             //#endif
             // Cheat and force outcome if not using dat
             Common.DataFullyLoaded = true;
@@ -70,7 +72,7 @@ namespace VNCCodeCommandConsole.User_Interface.User_Controls
                 MessageBox.Show(ex.ToString());
             }
             //#if TRACE
-            VNC.Log.Trace15("End", LOG_APPNAME, startTicks);
+            Log.Trace15("End", LOG_APPNAME, startTicks);
             //#endif
         }
 
@@ -246,7 +248,7 @@ namespace VNCCodeCommandConsole.User_Interface.User_Controls
 
         StringBuilder DisplayStopOrEndStatementVB(SearchTreeCommandConfiguration commandConfiguration)
         {
-            long startTicks = VNC.Log.Trace15("Start", Common.LOG_APPNAME);
+            long startTicks = Log.Trace15("Enter", Common.LOG_APPNAME);
 
             var walker = new VNCSW.VB.StopOrEndStatement();
 
@@ -254,14 +256,14 @@ namespace VNCCodeCommandConsole.User_Interface.User_Controls
             //commandConfiguration.RegEx = teExpressionStatementRegEx.Text;
             commandConfiguration.ConfigurationOptions = CodeExplorer.configurationOptions.GetConfigurationInfo();
 
-            VNC.Log.Trace15("Exit", Common.LOG_APPNAME, startTicks);
+            Log.Trace15("Exit", Common.LOG_APPNAME, startTicks);
 
             return VNCCA.Helpers.VB.InvokeVNCSyntaxWalker(walker, commandConfiguration);
         }
 
         StringBuilder DisplayExpressionStatementVB(SearchTreeCommandConfiguration commandConfiguration)
         {
-            long startTicks = VNC.Log.Trace15("Start", Common.LOG_APPNAME);
+            long startTicks = Log.Trace15("Enter", Common.LOG_APPNAME);
 
             var walker = new VNCSW.VB.ExpressionStatement();
 
@@ -269,7 +271,7 @@ namespace VNCCodeCommandConsole.User_Interface.User_Controls
             commandConfiguration.RegEx = teExpressionStatementRegEx.Text;
             commandConfiguration.ConfigurationOptions = CodeExplorer.configurationOptions.GetConfigurationInfo();
 
-            VNC.Log.Trace15("Exit", Common.LOG_APPNAME, startTicks);
+            Log.Trace15("Exit", Common.LOG_APPNAME, startTicks);
 
             return VNCCA.Helpers.VB.InvokeVNCSyntaxWalker(walker, commandConfiguration);
         }
@@ -277,21 +279,21 @@ namespace VNCCodeCommandConsole.User_Interface.User_Controls
         StringBuilder DisplayHandlesClauseVB(SearchTreeCommandConfiguration commandConfiguration)
         {
 
-            long startTicks = VNC.Log.Trace15("Start", Common.LOG_APPNAME);
+            long startTicks = Log.Trace15("Enter", Common.LOG_APPNAME);
             var walker = new VNCSW.VB.HandlesClause();
 
             commandConfiguration.UseRegEx = (bool)ceHandlesClauseUseRegEx.IsChecked;
             commandConfiguration.RegEx = teHandlesClauseRegEx.Text;
             commandConfiguration.ConfigurationOptions = CodeExplorer.configurationOptions.GetConfigurationInfo();
 
-            VNC.Log.Trace15("Exit", Common.LOG_APPNAME, startTicks);
+            Log.Trace15("Exit", Common.LOG_APPNAME, startTicks);
 
             return VNCCA.Helpers.VB.InvokeVNCSyntaxWalker(walker, commandConfiguration);
         }
 
         StringBuilder DisplayMultiLineLambdaExpressionVB(SearchTreeCommandConfiguration commandConfiguration)
         {
-            long startTicks = VNC.Log.Trace15("Start", Common.LOG_APPNAME);
+            long startTicks = Log.Trace15("Enter", Common.LOG_APPNAME);
 
             var walker = new VNCSW.VB.MultiLineLambdaExpression();
 
@@ -299,14 +301,14 @@ namespace VNCCodeCommandConsole.User_Interface.User_Controls
             commandConfiguration.RegEx = teMultiLineLambdaExpressionRegEx.Text;
             commandConfiguration.ConfigurationOptions = CodeExplorer.configurationOptions.GetConfigurationInfo();
 
-            VNC.Log.Trace15("Exit", Common.LOG_APPNAME, startTicks);
+            Log.Trace15("Exit", Common.LOG_APPNAME, startTicks);
 
             return VNCCA.Helpers.VB.InvokeVNCSyntaxWalker(walker, commandConfiguration);
         }
 
         StringBuilder DisplaySingleLineLambdaExpressionVB(SearchTreeCommandConfiguration commandConfiguration)
         {
-            long startTicks = VNC.Log.Trace15("Start", Common.LOG_APPNAME);
+            long startTicks = Log.Trace15("Enter", Common.LOG_APPNAME);
 
             var walker = new VNCSW.VB.SingleLineLambdaExpression();
 
@@ -314,14 +316,14 @@ namespace VNCCodeCommandConsole.User_Interface.User_Controls
             commandConfiguration.RegEx = teSingleLineLambdaExpressionRegEx.Text;
             commandConfiguration.ConfigurationOptions = CodeExplorer.configurationOptions.GetConfigurationInfo();
 
-            VNC.Log.Trace15("Exit", Common.LOG_APPNAME, startTicks);
+            Log.Trace15("Exit", Common.LOG_APPNAME, startTicks);
 
             return VNCCA.Helpers.VB.InvokeVNCSyntaxWalker(walker, commandConfiguration);
         }
 
         private StringBuilder DisplayMemberAccessExpressionWalkerVB(VNCCA.SearchTreeCommandConfiguration commandConfiguration)
         {
-            long startTicks = VNC.Log.Trace15("Start", Common.LOG_APPNAME);
+            long startTicks = Log.Trace15("Enter", Common.LOG_APPNAME);
 
             var walker = new VNCSW.VB.MemberAccessExpression();
 
@@ -337,14 +339,14 @@ namespace VNCCodeCommandConsole.User_Interface.User_Controls
             commandConfiguration.RegEx = teMemberAccessExpressionRegEx.Text;
             commandConfiguration.ConfigurationOptions = CodeExplorer.configurationOptions.GetConfigurationInfo();
 
-            VNC.Log.Trace15("Exit", Common.LOG_APPNAME, startTicks);
+            Log.Trace15("Exit", Common.LOG_APPNAME, startTicks);
 
             return VNCCA.Helpers.VB.InvokeVNCSyntaxWalker(walker, commandConfiguration);
         }
 
         StringBuilder DisplaySyntaxNodeWalkerVB(VNCCA.SearchTreeCommandConfiguration commandConfiguration)
         {
-            long startTicks = VNC.Log.Trace15("Start", Common.LOG_APPNAME);
+            long startTicks = Log.Trace15("Enter", Common.LOG_APPNAME);
 
             var walker = new VNCSW.VB.SyntaxNode();
 
@@ -352,14 +354,14 @@ namespace VNCCodeCommandConsole.User_Interface.User_Controls
             commandConfiguration.RegEx = teSyntaxNodeRegEx.Text;
             commandConfiguration.ConfigurationOptions = CodeExplorer.configurationOptions.GetConfigurationInfo();
 
-            VNC.Log.Trace15("Exit", Common.LOG_APPNAME, startTicks);
+            Log.Trace15("Exit", Common.LOG_APPNAME, startTicks);
 
             return VNCCA.Helpers.VB.InvokeVNCSyntaxWalker(walker, commandConfiguration);
         }
 
         StringBuilder DisplaySyntaxTokenWalkerVB(VNCCA.SearchTreeCommandConfiguration commandConfiguration)
         {
-            long startTicks = VNC.Log.Trace15("Start", Common.LOG_APPNAME);
+            long startTicks = Log.Trace15("Enter", Common.LOG_APPNAME);
 
             var walker = new VNCSW.VB.SyntaxToken();
 
@@ -367,14 +369,14 @@ namespace VNCCodeCommandConsole.User_Interface.User_Controls
             commandConfiguration.RegEx = teSyntaxTokenRegEx.Text;
             commandConfiguration.ConfigurationOptions = CodeExplorer.configurationOptions.GetConfigurationInfo();
 
-            VNC.Log.Trace15("Exit", Common.LOG_APPNAME, startTicks);
+            Log.Trace15("Exit", Common.LOG_APPNAME, startTicks);
 
             return VNCCA.Helpers.VB.InvokeVNCSyntaxWalker(walker, commandConfiguration);
         }
 
         StringBuilder DisplayAsNewClauseVB(SearchTreeCommandConfiguration commandConfiguration)
         {
-            long startTicks = VNC.Log.Trace15("Start", Common.LOG_APPNAME);
+            long startTicks = Log.Trace15("Enter", Common.LOG_APPNAME);
 
             var walker = new VNCSW.VB.AsNewClause();
 
@@ -388,21 +390,21 @@ namespace VNCCodeCommandConsole.User_Interface.User_Controls
         StringBuilder DisplaySimpleAsClauseWalkerVB(VNCCA.SearchTreeCommandConfiguration commandConfiguration)
         {
 
-            long startTicks = VNC.Log.Trace15("Start", Common.LOG_APPNAME);
+            long startTicks = Log.Trace15("Enter", Common.LOG_APPNAME);
             var walker = new VNCSW.VB.SimpleAsClause();
 
             commandConfiguration.UseRegEx = (bool)ceSimpleAsClauseUseRegEx.IsChecked;
             commandConfiguration.RegEx = teSimpleAsClauseRegEx.Text;
             commandConfiguration.ConfigurationOptions = CodeExplorer.configurationOptions.GetConfigurationInfo();
 
-            VNC.Log.Trace15("Exit", Common.LOG_APPNAME, startTicks);
+            Log.Trace15("Exit", Common.LOG_APPNAME, startTicks);
 
             return VNCCA.Helpers.VB.InvokeVNCSyntaxWalker(walker, commandConfiguration);
         }
 
         StringBuilder DisplayObjectCreationExpressionWalkerVB(VNCCA.SearchTreeCommandConfiguration commandConfiguration)
         {
-            long startTicks = VNC.Log.Trace15("Start", Common.LOG_APPNAME);
+            long startTicks = Log.Trace15("Enter", Common.LOG_APPNAME);
 
             var walker = new VNCSW.VB.ObjectCreationExpression();
 
@@ -410,14 +412,14 @@ namespace VNCCodeCommandConsole.User_Interface.User_Controls
             commandConfiguration.RegEx = teObjectCreationExpressionRegEx.Text;
             commandConfiguration.ConfigurationOptions = CodeExplorer.configurationOptions.GetConfigurationInfo();
 
-            VNC.Log.Trace15("Exit", Common.LOG_APPNAME, startTicks);
+            Log.Trace15("Exit", Common.LOG_APPNAME, startTicks);
 
             return VNCCA.Helpers.VB.InvokeVNCSyntaxWalker(walker, commandConfiguration);
         }
 
         StringBuilder DisplaySyntaxTriviaWalkerVB(VNCCA.SearchTreeCommandConfiguration commandConfiguration)
         {
-            long startTicks = VNC.Log.Trace15("Start", Common.LOG_APPNAME);
+            long startTicks = Log.Trace15("Enter", Common.LOG_APPNAME);
 
             var walker = new VNCSW.VB.SyntaxTrivia();
 
@@ -425,14 +427,14 @@ namespace VNCCodeCommandConsole.User_Interface.User_Controls
             commandConfiguration.RegEx = teSyntaxTriviaRegEx.Text;
             commandConfiguration.ConfigurationOptions = CodeExplorer.configurationOptions.GetConfigurationInfo();
 
-            VNC.Log.Trace15("Exit", Common.LOG_APPNAME, startTicks);
+            Log.Trace15("Exit", Common.LOG_APPNAME, startTicks);
 
             return VNCCA.Helpers.VB.InvokeVNCSyntaxWalker(walker, commandConfiguration);
         }
 
         private StringBuilder DisplayBinaryExpressiontWalkerVB(VNCCA.SearchTreeCommandConfiguration commandConfiguration)
         {
-            long startTicks = VNC.Log.Trace15("Start", Common.LOG_APPNAME);
+            long startTicks = Log.Trace15("Enter", Common.LOG_APPNAME);
 
             var walker = new VNCSW.VB.BinaryExpression();
 
@@ -440,13 +442,13 @@ namespace VNCCodeCommandConsole.User_Interface.User_Controls
             commandConfiguration.RegEx = teBinaryExpressionRegEx.Text;
             commandConfiguration.ConfigurationOptions = CodeExplorer.configurationOptions.GetConfigurationInfo();
 
-            VNC.Log.Trace15("Exit", Common.LOG_APPNAME, startTicks);
+            Log.Trace15("Exit", Common.LOG_APPNAME, startTicks);
 
             return VNCCA.Helpers.VB.InvokeVNCSyntaxWalker(walker, commandConfiguration);
         }
         StringBuilder DisplayAssignmentStatementWalkerVB(VNCCA.SearchTreeCommandConfiguration commandConfiguration)
         {
-            long startTicks = VNC.Log.Trace15("Start", Common.LOG_APPNAME);
+            long startTicks = Log.Trace15("Enter", Common.LOG_APPNAME);
 
             var walker = new VNCSW.VB.AssignmentStatement();
             walker.MatchLeft = (bool)ceAssignmentStatementMatchLeft.IsChecked;
@@ -456,14 +458,14 @@ namespace VNCCodeCommandConsole.User_Interface.User_Controls
             commandConfiguration.RegEx = teAssignmentStatementRegEx.Text;
             commandConfiguration.ConfigurationOptions = CodeExplorer.configurationOptions.GetConfigurationInfo();
 
-            VNC.Log.Trace15("Exit", Common.LOG_APPNAME, startTicks);
+            Log.Trace15("Exit", Common.LOG_APPNAME, startTicks);
 
             return VNCCA.Helpers.VB.InvokeVNCSyntaxWalker(walker, commandConfiguration);
         }
 
         StringBuilder DisplayLocalDeclarationStatementWalkerVB(VNCCA.SearchTreeCommandConfiguration commandConfiguration)
         {
-            long startTicks = VNC.Log.Trace15("Start", Common.LOG_APPNAME);
+            long startTicks = Log.Trace15("Enter", Common.LOG_APPNAME);
 
             var walker = new VNCSW.VB.LocalDeclarationStatement();
 
@@ -473,14 +475,14 @@ namespace VNCCodeCommandConsole.User_Interface.User_Controls
             commandConfiguration.RegEx = teLocalDeclarationStatementRegEx.Text;
             commandConfiguration.ConfigurationOptions = CodeExplorer.configurationOptions.GetConfigurationInfo();
 
-            VNC.Log.Trace15("Exit", Common.LOG_APPNAME, startTicks);
+            Log.Trace15("Exit", Common.LOG_APPNAME, startTicks);
 
             return VNCCA.Helpers.VB.InvokeVNCSyntaxWalker(walker, commandConfiguration);
         }
 
         private StringBuilder DisplayStructureBlockWalkerVB(VNCCA.SearchTreeCommandConfiguration commandConfiguration)
         {
-            long startTicks = VNC.Log.Trace15("Start", Common.LOG_APPNAME);
+            long startTicks = Log.Trace15("Enter", Common.LOG_APPNAME);
 
             var walker = new VNCSW.VB.StructureBlock();
 
@@ -499,14 +501,14 @@ namespace VNCCodeCommandConsole.User_Interface.User_Controls
             // StructureBlock has special (two types) of RegEx.
             walker.InitializeRegEx();
 
-            VNC.Log.Trace15("Exit", Common.LOG_APPNAME, startTicks);
+            Log.Trace15("Exit", Common.LOG_APPNAME, startTicks);
 
             return VNCCA.Helpers.VB.InvokeVNCSyntaxWalker(walker, commandConfiguration);
         }
 
         private StringBuilder DisplayVariableDeclaratorWalkerVB(VNCCA.SearchTreeCommandConfiguration commandConfiguration)
         {
-            long startTicks = VNC.Log.Trace15("Start", Common.LOG_APPNAME);
+            long startTicks = Log.Trace15("Enter", Common.LOG_APPNAME);
 
             var walker = new VNCSW.VB.VariableDeclarator();
 
@@ -516,14 +518,14 @@ namespace VNCCodeCommandConsole.User_Interface.User_Controls
             commandConfiguration.RegEx = teVariableDeclaratorRegEx.Text;
             commandConfiguration.ConfigurationOptions = CodeExplorer.configurationOptions.GetConfigurationInfo();
 
-            VNC.Log.Trace15("Exit", Common.LOG_APPNAME, startTicks);
+            Log.Trace15("Exit", Common.LOG_APPNAME, startTicks);
 
             return VNCCA.Helpers.VB.InvokeVNCSyntaxWalker(walker, commandConfiguration);
         }
 
         private StringBuilder DisplayInvocationExpressionWalkerVB(VNCCA.SearchTreeCommandConfiguration commandConfiguration)
         {
-            long startTicks = VNC.Log.Trace15("Start", Common.LOG_APPNAME);
+            long startTicks = Log.Trace15("Enter", Common.LOG_APPNAME);
 
             var walker = new VNCSW.VB.InvocationExpression();
 
@@ -531,14 +533,14 @@ namespace VNCCodeCommandConsole.User_Interface.User_Controls
             commandConfiguration.RegEx = teInvocationExpressionRegEx.Text;
             commandConfiguration.ConfigurationOptions = CodeExplorer.configurationOptions.GetConfigurationInfo();
 
-            VNC.Log.Trace15("Exit", Common.LOG_APPNAME, startTicks);
+            Log.Trace15("Exit", Common.LOG_APPNAME, startTicks);
 
             return VNCCA.Helpers.VB.InvokeVNCSyntaxWalker(walker, commandConfiguration);
         }
 
         private StringBuilder DisplayParameterListWalkerVB(VNCCA.SearchTreeCommandConfiguration commandConfiguration)
         {
-            long startTicks = VNC.Log.Trace15("Start", Common.LOG_APPNAME);
+            long startTicks = Log.Trace15("Enter", Common.LOG_APPNAME);
 
             var walker = new VNCSW.VB.ParameterList();
 
@@ -546,14 +548,14 @@ namespace VNCCodeCommandConsole.User_Interface.User_Controls
             commandConfiguration.RegEx = teParameterListRegEx.Text;
             commandConfiguration.ConfigurationOptions = CodeExplorer.configurationOptions.GetConfigurationInfo();
 
-            VNC.Log.Trace15("Exit", Common.LOG_APPNAME, startTicks);
+            Log.Trace15("Exit", Common.LOG_APPNAME, startTicks);
 
             return VNCCA.Helpers.VB.InvokeVNCSyntaxWalker(walker, commandConfiguration);
         }
 
         private StringBuilder DisplayArgumentListWalkerVB(VNCCA.SearchTreeCommandConfiguration commandConfiguration)
         {
-            long startTicks = VNC.Log.Trace15("Start", Common.LOG_APPNAME);
+            long startTicks = Log.Trace15("Enter", Common.LOG_APPNAME);
 
             var walker = new VNCSW.VB.ArgumentList();
 
@@ -561,14 +563,14 @@ namespace VNCCodeCommandConsole.User_Interface.User_Controls
             commandConfiguration.RegEx = teArgumentListRegEx.Text;
             commandConfiguration.ConfigurationOptions = CodeExplorer.configurationOptions.GetConfigurationInfo();
 
-            VNC.Log.Trace15("Exit", Common.LOG_APPNAME, startTicks);
+            Log.Trace15("Exit", Common.LOG_APPNAME, startTicks);
 
             return VNCCA.Helpers.VB.InvokeVNCSyntaxWalker(walker, commandConfiguration);
         }
 
         private StringBuilder DisplayPropertyStatementWalkerVB(VNCCA.SearchTreeCommandConfiguration commandConfiguration)
         {
-            long startTicks = VNC.Log.Trace15("Start", Common.LOG_APPNAME);
+            long startTicks = Log.Trace15("Enter", Common.LOG_APPNAME);
 
             VNCSW.VB.VNCVBTypedSyntaxWalkerBase walker = null;
 
@@ -587,14 +589,14 @@ namespace VNCCodeCommandConsole.User_Interface.User_Controls
             commandConfiguration.RegEx = tePropertyStatementRegEx.Text;
             commandConfiguration.ConfigurationOptions = CodeExplorer.configurationOptions.GetConfigurationInfo();
 
-            VNC.Log.Trace15("Exit", Common.LOG_APPNAME, startTicks);
+            Log.Trace15("Exit", Common.LOG_APPNAME, startTicks);
 
             return VNCCA.Helpers.VB.InvokeVNCSyntaxWalker(walker, commandConfiguration);
         }
 
         private StringBuilder DisplayFieldDeclarationWalkerVB(VNCCA.SearchTreeCommandConfiguration commandConfiguration)
         {
-            long startTicks = VNC.Log.Trace15("Start", Common.LOG_APPNAME);
+            long startTicks = Log.Trace15("Enter", Common.LOG_APPNAME);
 
             VNCCA.SyntaxNode.FieldDeclarationLocation fieldDeclarationLocation = VNCCA.SyntaxNode.FieldDeclarationLocation.Class;
 
@@ -625,14 +627,14 @@ namespace VNCCodeCommandConsole.User_Interface.User_Controls
             commandConfiguration.RegEx = teFieldDeclarationRegEx.Text;
             commandConfiguration.ConfigurationOptions = CodeExplorer.configurationOptions.GetConfigurationInfo();
 
-            VNC.Log.Trace15("Exit", Common.LOG_APPNAME, startTicks);
+            Log.Trace15("Exit", Common.LOG_APPNAME, startTicks);
 
             return VNCCA.Helpers.VB.InvokeVNCSyntaxWalker(walker, commandConfiguration);
         }
 
         private StringBuilder DisplayClassStatementWalkerVB(VNCCA.SearchTreeCommandConfiguration commandConfiguration)
         {
-            long startTicks = VNC.Log.Trace15("Start", Common.LOG_APPNAME);
+            long startTicks = Log.Trace15("Enter", Common.LOG_APPNAME);
 
             VNCSW.VB.VNCVBSyntaxWalkerBase walker = null;
 
@@ -649,14 +651,14 @@ namespace VNCCodeCommandConsole.User_Interface.User_Controls
             commandConfiguration.RegEx = teClassStatementRegEx.Text;
             commandConfiguration.ConfigurationOptions = CodeExplorer.configurationOptions.GetConfigurationInfo();
 
-            VNC.Log.Trace15("Exit", Common.LOG_APPNAME, startTicks);
+            Log.Trace15("Exit", Common.LOG_APPNAME, startTicks);
 
             return VNCCA.Helpers.VB.InvokeVNCSyntaxWalker(walker, commandConfiguration);
         }
 
         private StringBuilder DisplayImportsStatementWalkerVB(VNCCA.SearchTreeCommandConfiguration commandConfiguration)
         {
-            long startTicks = VNC.Log.Trace15("Start", Common.LOG_APPNAME);
+            long startTicks = Log.Trace15("Enter", Common.LOG_APPNAME);
 
             var walker = new VNCSW.VB.ImportsStatement();
 
@@ -673,14 +675,14 @@ namespace VNCCodeCommandConsole.User_Interface.User_Controls
             commandConfiguration.RegEx = teImportsStatementRegEx.Text;
             commandConfiguration.ConfigurationOptions = CodeExplorer.configurationOptions.GetConfigurationInfo();
 
-            VNC.Log.Trace15("Exit", Common.LOG_APPNAME, startTicks);
+            Log.Trace15("Exit", Common.LOG_APPNAME, startTicks);
 
             return VNCCA.Helpers.VB.InvokeVNCSyntaxWalker(walker, commandConfiguration);
         }
 
         StringBuilder DisplayMethodBlockWalkerVB(SearchTreeCommandConfiguration commandConfiguration)
         {
-            long startTicks = VNC.Log.Trace15("Start", Common.LOG_APPNAME);
+            long startTicks = Log.Trace15("Enter", Common.LOG_APPNAME);
 
             VNCSW.VB.VNCVBTypedSyntaxWalkerBase walker = null;
 
@@ -712,14 +714,14 @@ namespace VNCCodeCommandConsole.User_Interface.User_Controls
             CodeExplorer.teSyntaxTrivia.Text += walker.WalkerTrivia.ToString();
             CodeExplorer.teSyntaxStructuredTrivia.Text += walker.WalkerStructuredTrivia.ToString();
 
-            VNC.Log.Trace15("Exit", Common.LOG_APPNAME, startTicks);
+            Log.Trace15("Exit", Common.LOG_APPNAME, startTicks);
 
             return results;
         }
 
         private StringBuilder DisplayMethodStatementWalkerVB(VNCCA.SearchTreeCommandConfiguration commandConfiguration)
         {
-            long startTicks = VNC.Log.Trace15("Start", Common.LOG_APPNAME);
+            long startTicks = Log.Trace15("Enter", Common.LOG_APPNAME);
 
             VNCSW.VB.VNCVBTypedSyntaxWalkerBase walker = null;
 
@@ -748,14 +750,14 @@ namespace VNCCodeCommandConsole.User_Interface.User_Controls
             CodeExplorer.teSyntaxTrivia.Text += walker.WalkerTrivia.ToString();
             CodeExplorer.teSyntaxStructuredTrivia.Text += walker.WalkerStructuredTrivia.ToString();
 
-            VNC.Log.Trace15("Exit", Common.LOG_APPNAME, startTicks);
+            Log.Trace15("Exit", Common.LOG_APPNAME, startTicks);
 
             return results;
         }
 
         private StringBuilder DisplayModuleStatementWalkerVB(VNCCA.SearchTreeCommandConfiguration commandConfiguration)
         {
-            long startTicks = VNC.Log.Trace15("Start", Common.LOG_APPNAME);
+            long startTicks = Log.Trace15("Enter", Common.LOG_APPNAME);
 
             VNCSW.VB.VNCVBTypedSyntaxWalkerBase walker = null;
 
@@ -773,7 +775,7 @@ namespace VNCCodeCommandConsole.User_Interface.User_Controls
             commandConfiguration.RegEx = teModuleStatementRegEx.Text;
             commandConfiguration.ConfigurationOptions = CodeExplorer.configurationOptions.GetConfigurationInfo();
 
-            VNC.Log.Trace15("Exit", Common.LOG_APPNAME, startTicks);
+            Log.Trace15("Exit", Common.LOG_APPNAME, startTicks);
 
             return VNCCA.Helpers.VB.InvokeVNCSyntaxWalker(walker,
                 commandConfiguration);
@@ -782,7 +784,7 @@ namespace VNCCodeCommandConsole.User_Interface.User_Controls
 
         private StringBuilder DisplayNamespaceStatementWalkerVB(VNCCA.SearchTreeCommandConfiguration commandConfiguration)
         {
-            long startTicks = VNC.Log.Trace15("Start", Common.LOG_APPNAME);
+            long startTicks = Log.Trace15("Enter", Common.LOG_APPNAME);
 
             var walker = new VNCSW.VB.NamespaceStatement();
 
@@ -794,7 +796,7 @@ namespace VNCCodeCommandConsole.User_Interface.User_Controls
             commandConfiguration.RegEx = teNamespaceStatementRegEx.Text;
             commandConfiguration.ConfigurationOptions = CodeExplorer.configurationOptions.GetConfigurationInfo();
 
-            VNC.Log.Trace15("Exit", Common.LOG_APPNAME, startTicks);
+            Log.Trace15("Exit", Common.LOG_APPNAME, startTicks);
 
             return VNCCA.Helpers.VB.InvokeVNCSyntaxWalker(walker,
                 commandConfiguration);

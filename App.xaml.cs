@@ -5,8 +5,11 @@ using System.Configuration;
 using System.Data;
 using System.Linq;
 using System.Security.Principal;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
+
+using VNC;
 
 namespace VNCCodeCommandConsole
 {
@@ -20,7 +23,8 @@ namespace VNCCodeCommandConsole
 
         public App()
         {
-            long startTicks = VNC.Log.Trace9("Enter", LOG_APPNAME, BASE_ERRORNUMBER + 0);
+            Log.Info("SignalRDelay", Common.LOG_APPNAME);  Thread.Sleep(100); 
+            long startTicks = Log.CONSTRUCTOR("Enter", LOG_APPNAME);
 
             var defaultThemes = Theme.Themes;
 
@@ -70,14 +74,14 @@ namespace VNCCodeCommandConsole
 
             ApplicationThemeHelper.ApplicationThemeName = Data.Config.DefaultUITheme;
 
-            VNC.Log.Trace9("Exit", LOG_APPNAME, BASE_ERRORNUMBER + 0, startTicks);
+            Log.CONSTRUCTOR("Exit", LOG_APPNAME, startTicks);
         }
 
         private void Application_Startup(object sender, StartupEventArgs e)
         {
-#if TRACE
-            long startTicks = VNC.Log.Trace9("Enter", LOG_APPNAME, BASE_ERRORNUMBER + 0);
-#endif
+
+            long startTicks = Log.APPLICATION_START("Enter", LOG_APPNAME);
+
             try
             {
                 AppDomain.CurrentDomain.UnhandledException +=
@@ -167,48 +171,47 @@ namespace VNCCodeCommandConsole
                 MessageBox.Show(ex.ToString());
                 MessageBox.Show(ex.InnerException.ToString());
             }
-#if TRACE
-            VNC.Log.Trace9("Exit", LOG_APPNAME, BASE_ERRORNUMBER + 0, startTicks);
-#endif
+
+            Log.APPLICATION_START("Exit", LOG_APPNAME, startTicks);
         }
 
         private void Application_SessionEnding(object sender, SessionEndingCancelEventArgs e)
         {
 #if TRACE
-            long startTicks = VNC.Log.Trace9("Enter", LOG_APPNAME, BASE_ERRORNUMBER + 0);
+            long startTicks = Log.APPLICATION_END("Enter", LOG_APPNAME, BASE_ERRORNUMBER + 0);
 #endif
 
 #if TRACE
-            VNC.Log.Trace9("Exit", LOG_APPNAME, BASE_ERRORNUMBER + 0, startTicks);
+            Log.APPLICATION_END("Exit", LOG_APPNAME, BASE_ERRORNUMBER + 0, startTicks);
 #endif
         }
 
         private void Application_Exit(object sender, ExitEventArgs e)
         {
 #if TRACE
-            long startTicks = VNC.Log.Trace9("Enter", LOG_APPNAME, BASE_ERRORNUMBER + 0);
+            long startTicks = Log.APPLICATION_END("Enter", LOG_APPNAME, BASE_ERRORNUMBER + 0);
 #endif
 
 #if TRACE
-            VNC.Log.Trace9("Exit", LOG_APPNAME, BASE_ERRORNUMBER + 0, startTicks);
+            Log.APPLICATION_END("Exit", LOG_APPNAME, BASE_ERRORNUMBER + 0, startTicks);
 #endif
         }
 
         private void Application_Deactivated(object sender, EventArgs e)
         {
 #if TRACE
-            long startTicks = VNC.Log.Trace9("Enter", LOG_APPNAME, BASE_ERRORNUMBER + 0);
+            long startTicks = Log.APPLICATION_END("Enter", LOG_APPNAME, BASE_ERRORNUMBER + 0);
 #endif
 
 #if TRACE
-            VNC.Log.Trace9("Exit", LOG_APPNAME, BASE_ERRORNUMBER + 0, startTicks);
+            Log.APPLICATION_END("Exit", LOG_APPNAME, BASE_ERRORNUMBER + 0, startTicks);
 #endif
         }
 
         private void Application_DispatcherUnhandledException(object sender, System.Windows.Threading.DispatcherUnhandledExceptionEventArgs e)
         {
 #if TRACE
-            long startTicks = VNC.Log.Trace9("Enter", LOG_APPNAME, BASE_ERRORNUMBER + 0);
+            long startTicks = Log.Debug("Enter", LOG_APPNAME, BASE_ERRORNUMBER + 0);
 #endif
             MessageBox.Show("Application_DispatcherUnhandledException: " + e.Exception.Message, LOG_APPNAME, MessageBoxButton.OK, MessageBoxImage.Warning);
             MessageBox.Show("Application_DispatcherUnhandledException Inner: " + e.Exception.InnerException.Message, LOG_APPNAME, MessageBoxButton.OK, MessageBoxImage.Warning);
@@ -217,7 +220,7 @@ namespace VNCCodeCommandConsole
             e.Handled = false;  // Default
 
 #if TRACE
-            VNC.Log.Trace9("Exit", LOG_APPNAME, BASE_ERRORNUMBER + 0, startTicks);
+            Log.Debug("Exit", LOG_APPNAME, BASE_ERRORNUMBER + 0, startTicks);
 #endif
         }
 

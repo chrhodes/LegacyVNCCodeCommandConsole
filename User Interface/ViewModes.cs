@@ -33,6 +33,8 @@ namespace VNCCodeCommandConsole.User_Interface
 
         public ViewModes()
         {
+            long startTicks = Log.CONSTRUCTOR("Enter", Common.LOG_APPNAME);
+
             List<ViewModeItem> viewModeList = new List<ViewModeItem>();
 
             viewModeList.Add(new ViewModeItem("Basic", "Basic", ViewMode.Mode.Basic));
@@ -49,6 +51,8 @@ namespace VNCCodeCommandConsole.User_Interface
             }
 
             Items = viewModeList;
+
+            Log.CONSTRUCTOR("Exit", Common.LOG_APPNAME, startTicks);
         }
     }
 }

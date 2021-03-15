@@ -17,7 +17,7 @@
     xmlns:localData="clr-namespace:VNCCodeCommandConsole.Data"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"       
     xmlns:sys="clr-namespace:System;assembly=mscorlib"
-    xmlns:VNCDxWPF="clr-namespace:VNC.WPFUserControls;assembly=VNC.WPFUserControls"
+    xmlns:vncwpfpv="clr-namespace:VNC.WPF.Presentation.Views;assembly=VNC.WPF.Presentation"
     
     mc:Ignorable="d"
     Title="About VNCCodeCommandConsole" FontSize="16"
@@ -69,7 +69,7 @@
 
                 <dxlc:LayoutItem Label="Disclaimer" Style="{StaticResource AboutLayout}" VerticalAlignment="Top" >
                     <TextBlock TextWrapping="Wrap" FontSize="12"
-                               Text="Intial Ideas to use Microsoft.CodeAnalysis to refactor code." />
+                               Text="Initial Ideas on using Microsoft.CodeAnalysis to refactor code." />
                 </dxlc:LayoutItem>
 
                 <dxlc:LayoutItem Label="AssemblyVersion:" Style="{StaticResource AboutLayoutHorizontal}" VerticalAlignment="Top"  >
@@ -104,7 +104,7 @@
         
         <dxlc:LayoutGroup Name="lg_Footer" >
             <dxlc:LayoutItem >
-                <VNCDxWPF:CylonEyeBall x:Name="cylonEyeBall1"  />
+                <vncwpfpv:CylonEyeBall x:Name="cylonEyeBall1"  />
             </dxlc:LayoutItem>
             
             <dxlc:LayoutItem>
