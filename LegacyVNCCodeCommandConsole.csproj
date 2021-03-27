@@ -434,6 +434,7 @@
       <DependentUpon>ApplicationDataSet.xsd</DependentUpon>
     </None>
     <None Include="Diagrams\ClassDiagram1.cd" />
+    <None Include="Diagrams\User_Interface.cd" />
     <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

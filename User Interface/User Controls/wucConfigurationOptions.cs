@@ -18,9 +18,9 @@ namespace VNCCodeCommandConsole.User_Interface.User_Controls
         /// Populate DisplayInfo with values from the UI
         /// </summary>
         /// <returns></returns>
-        public VNC.CodeAnalysis.ConfigurationOptions GetConfigurationInfo()
+        public VNC.CodeAnalysis.CodeAnalysisOptions GetConfigurationInfo()
         {
-            VNC.CodeAnalysis.ConfigurationOptions configurationOptions = new VNCCA.ConfigurationOptions();
+            VNC.CodeAnalysis.CodeAnalysisOptions configurationOptions = new VNCCA.CodeAnalysisOptions();
 
             var foo = lbeSyntaxWalkerDepth.EditValue;
             var bar = lbeAdditionalNodes.EditValue;
@@ -55,15 +55,15 @@ namespace VNCCodeCommandConsole.User_Interface.User_Controls
             configurationOptions.DisplayStatementBlock = (bool)ceDisplay_StatementBlock.IsChecked;
             configurationOptions.IncludeStatementBlockInCRC = (bool)ceIncludeStatementBlockInCRC.IsChecked;
 
-            configurationOptions.SourceLocation = (bool)ceDisplaySourceLocation.IsChecked;
-            configurationOptions.CRC32 = (bool)ceDisplayCRC32.IsChecked;
-            configurationOptions.ReplaceCRLF = (bool)ceReplaceCRLF.IsChecked;
+            configurationOptions.DisplaySourceLocation = (bool)ceDisplaySourceLocation.IsChecked;
+            configurationOptions.DisplayCRC32 = (bool)ceDisplayCRC32.IsChecked;
+            configurationOptions.ReplaceCRLFInNodeName = (bool)ceReplaceCRLF.IsChecked;
 
-            configurationOptions.ClassOrModuleName = (bool)ceDisplayClassOrModuleName.IsChecked;
-            configurationOptions.MethodName = (bool)ceDisplayMethodName.IsChecked;
+            configurationOptions.DisplayClassOrModuleName = (bool)ceDisplayClassOrModuleName.IsChecked;
+            configurationOptions.DisplayMethodName = (bool)ceDisplayMethodName.IsChecked;
 
-            configurationOptions.ContainingMethodBlock = (bool)ceDisplayContainingMethodBlock.IsChecked;
-            configurationOptions.ContainingBlock = (bool)ceDisplayContainingBlock.IsChecked;
+            configurationOptions.DisplayContainingMethodBlock = (bool)ceDisplayContainingMethodBlock.IsChecked;
+            configurationOptions.DisplayContainingBlock = (bool)ceDisplayContainingBlock.IsChecked;
 
             configurationOptions.InTryBlock = (bool)ceInTryBlock.IsChecked;
             configurationOptions.InWhileBlock = (bool)ceInWhileBlock.IsChecked;

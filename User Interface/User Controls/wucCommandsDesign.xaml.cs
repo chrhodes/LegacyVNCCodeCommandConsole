@@ -108,7 +108,7 @@ namespace VNCCodeCommandConsole.User_Interface.User_Controls
                 sourceCode = sr.ReadToEnd();
             }
 
-            string metricClass = string.Format("VNC.CodeAnalysis.DesignMetrics.{0}.{1},VNC.CodeAnalysis", language, targetName);
+            string metricClass = $"VNC.CodeAnalysis.DesignMetrics.{language}.{targetName},VNC.CodeAnalysis";
 
             Type metricType = Type.GetType(metricClass);
             MethodInfo metricMethod = metricType.GetMethod("Check");

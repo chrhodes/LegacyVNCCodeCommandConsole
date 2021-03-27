@@ -40,9 +40,9 @@
  
         <dx:GroupFrame Header="Language" Height="60">
             <dxe:ListBoxEdit Name="lbeCommandsDesign_Language" 
-                                                         ValueMember="Content" 
-                                                         SelectedIndex="0"                                                         
-                                                         ShowBorder="False" Background="{x:Null}">
+                            ValueMember="Content" 
+                            SelectedIndex="0"                                                         
+                            ShowBorder="False" Background="{x:Null}">
                 <dxe:ListBoxEdit.StyleSettings>
                     <dxe:RadioListBoxEditStyleSettings />
                 </dxe:ListBoxEdit.StyleSettings>

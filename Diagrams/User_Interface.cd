@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="VNCCodeCommandConsole.User_Interface.User_Controls.wucDXBase">
+    <Position X="6" Y="9.75" Width="4.75" />
+    <TypeIdentifier>
+      <HashCode>AAAgAKAIAAAEAEAAQACAQAAAEAABMAQAAEAKgJAgABA=</HashCode>
+      <FileName>User Interface\User Controls\wucDXBase.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="VNCCodeCommandConsole.User_Interface.User_Controls.wucCommandsFindVBSyntax">
+    <Position X="14.75" Y="2.5" Width="7.5" />
+    <TypeIdentifier>
+      <HashCode>GCBKQCUoQJEICgaAQwAUkAAMQhABIMJgEhABqgBUBQA=</HashCode>
+      <FileName>User Interface\User Controls\wucCommandsFindVBSyntax.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="VNCCodeCommandConsole.User_Interface.User_Controls.wucCodeExplorerContext" Collapsed="true">
+    <Position X="0.5" Y="1" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAMAAAAIAAAABEAAQACQAAAACAAAAAEAAAIAQAAAAAA=</HashCode>
+      <FileName>User Interface\User Controls\wucCodeExplorerContext.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="VNCCodeCommandConsole.User_Interface.User_Controls.wucCommandsQuality" Collapsed="true">
+    <Position X="7.75" Y="7.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAAAAAAAQACAAAAAChAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>User Interface\User Controls\wucCommandsQuality.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="VNCCodeCommandConsole.User_Interface.User_Controls.wucConfigurationOptions">
+    <Position X="1.75" Y="10.25" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>User Interface\User Controls\wucConfigurationOptions.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="VNCCodeCommandConsole.User_Interface.User_Controls.wucCodeExplorer" Collapsed="true">
+    <Position X="0.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAQBAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>User Interface\User Controls\wucCodeExplorer.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="VNCCodeCommandConsole.User_Interface.User_Controls.wucCodeExplorerMenu" Collapsed="true">
+    <Position X="0.5" Y="3" Width="2" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAMAAAAAgAQAAAAAAEAAgAAAAAAAAAAAAAAAQA=</HashCode>
+      <FileName>User Interface\User Controls\wucCodeExplorerMenu.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="VNCCodeCommandConsole.User_Interface.User_Controls.wucCommands" Collapsed="true">
+    <Position X="4" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAAAAAAAQACAAAAICgAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>User Interface\User Controls\wucCommands.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="VNCCodeCommandConsole.User_Interface.User_Controls.wucCommandsAdd" Collapsed="true">
+    <Position X="12.25" Y="8.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AgEAAAAIAAABAAAAQAAAAAAAAgAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>User Interface\User Controls\wucCommandsAdd.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="VNCCodeCommandConsole.User_Interface.User_Controls.wucCommandsDesign" Collapsed="true">
+    <Position X="7.75" Y="6.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAAAAAAAQACAAAAAChAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>User Interface\User Controls\wucCommandsDesign.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="VNCCodeCommandConsole.User_Interface.User_Controls.wucCommandsFind" Collapsed="true">
+    <Position X="4" Y="4.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>EAAACAAIAAAAAAIAQAAACAAAAgAAAAAAABIAAAABAAA=</HashCode>
+      <FileName>User Interface\User Controls\wucCommandsFind.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="VNCCodeCommandConsole.User_Interface.User_Controls.wucCommandsParse" Collapsed="true">
+    <Position X="4" Y="5.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAAAAAAAQACAAAAACgAgABAAAAAAAAAAAAA=</HashCode>
+      <FileName>User Interface\User Controls\wucCommandsParse.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="VNCCodeCommandConsole.User_Interface.User_Controls.wucCommandsPerformance" Collapsed="true">
+    <Position X="8.5" Y="3.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAAAAAAAQACAAAAAChAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>User Interface\User Controls\wucCommandsPerformance.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="VNCCodeCommandConsole.User_Interface.User_Controls.wucCommandsRemove" Collapsed="true">
+    <Position X="5.75" Y="2.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAUAAAwICAAAAAAAQAAAAAQAAwAAAAAAIAYAAAAAAAA=</HashCode>
+      <FileName>User Interface\User Controls\wucCommandsRemove.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="VNCCodeCommandConsole.User_Interface.User_Controls.wucCommandsRewrite">
+    <Position X="15.25" Y="2" Width="9" />
+    <TypeIdentifier>
+      <HashCode>AAEAAQAIALCgAABAQAAAAAAAAgAIAAAABAAAAAAAAEA=</HashCode>
+      <FileName>User Interface\User Controls\wucCommandsRewrite.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="VNCCodeCommandConsole.User_Interface.User_Controls.wucCommandsWorkspace" Collapsed="true">
+    <Position X="0.5" Y="5.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAIAAAAQAAAQACAAAAACgAAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>User Interface\User Controls\wucCommandsWorkspace.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
