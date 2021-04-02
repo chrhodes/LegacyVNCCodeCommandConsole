@@ -252,9 +252,9 @@ namespace VNCCodeCommandConsole.User_Interface.User_Controls
 
             var walker = new VNCSW.VB.StopOrEndStatement();
 
-            //commandConfiguration.UseRegEx = (bool)ceExpressionStatementUseRegEx.IsChecked;
-            //commandConfiguration.RegEx = teExpressionStatementRegEx.Text;
-            commandConfiguration.ConfigurationOptions = CodeExplorer.configurationOptions.GetConfigurationInfo();
+            //commandConfiguration.WalkerPattern.UseRegEx = (bool)ceExpressionStatementUseRegEx.IsChecked;
+            //commandConfiguration.WalkerPattern.RegEx = teExpressionStatementRegEx.Text;
+            commandConfiguration.CodeAnalysisOptions = CodeExplorer.configurationOptions.GetConfigurationInfo();
 
             Log.Trace15("Exit", Common.LOG_APPNAME, startTicks);
 
@@ -267,9 +267,9 @@ namespace VNCCodeCommandConsole.User_Interface.User_Controls
 
             var walker = new VNCSW.VB.ExpressionStatement();
 
-            commandConfiguration.UseRegEx = (bool)ceExpressionStatementUseRegEx.IsChecked;
-            commandConfiguration.RegEx = teExpressionStatementRegEx.Text;
-            commandConfiguration.ConfigurationOptions = CodeExplorer.configurationOptions.GetConfigurationInfo();
+            commandConfiguration.WalkerPattern.UseRegEx = (bool)ceExpressionStatementUseRegEx.IsChecked;
+            commandConfiguration.WalkerPattern.RegEx = teExpressionStatementRegEx.Text;
+            commandConfiguration.CodeAnalysisOptions = CodeExplorer.configurationOptions.GetConfigurationInfo();
 
             Log.Trace15("Exit", Common.LOG_APPNAME, startTicks);
 
@@ -282,9 +282,9 @@ namespace VNCCodeCommandConsole.User_Interface.User_Controls
             long startTicks = Log.Trace15("Enter", Common.LOG_APPNAME);
             var walker = new VNCSW.VB.HandlesClause();
 
-            commandConfiguration.UseRegEx = (bool)ceHandlesClauseUseRegEx.IsChecked;
-            commandConfiguration.RegEx = teHandlesClauseRegEx.Text;
-            commandConfiguration.ConfigurationOptions = CodeExplorer.configurationOptions.GetConfigurationInfo();
+            commandConfiguration.WalkerPattern.UseRegEx = (bool)ceHandlesClauseUseRegEx.IsChecked;
+            commandConfiguration.WalkerPattern.RegEx = teHandlesClauseRegEx.Text;
+            commandConfiguration.CodeAnalysisOptions = CodeExplorer.configurationOptions.GetConfigurationInfo();
 
             Log.Trace15("Exit", Common.LOG_APPNAME, startTicks);
 
@@ -297,9 +297,9 @@ namespace VNCCodeCommandConsole.User_Interface.User_Controls
 
             var walker = new VNCSW.VB.MultiLineLambdaExpression();
 
-            commandConfiguration.UseRegEx = (bool)ceMultiLineLambdaExpressionUseRegEx.IsChecked;
-            commandConfiguration.RegEx = teMultiLineLambdaExpressionRegEx.Text;
-            commandConfiguration.ConfigurationOptions = CodeExplorer.configurationOptions.GetConfigurationInfo();
+            commandConfiguration.WalkerPattern.UseRegEx = (bool)ceMultiLineLambdaExpressionUseRegEx.IsChecked;
+            commandConfiguration.WalkerPattern.RegEx = teMultiLineLambdaExpressionRegEx.Text;
+            commandConfiguration.CodeAnalysisOptions = CodeExplorer.configurationOptions.GetConfigurationInfo();
 
             Log.Trace15("Exit", Common.LOG_APPNAME, startTicks);
 
@@ -312,9 +312,9 @@ namespace VNCCodeCommandConsole.User_Interface.User_Controls
 
             var walker = new VNCSW.VB.SingleLineLambdaExpression();
 
-            commandConfiguration.UseRegEx = (bool)ceSingleLineLambdaExpressionUseRegEx.IsChecked;
-            commandConfiguration.RegEx = teSingleLineLambdaExpressionRegEx.Text;
-            commandConfiguration.ConfigurationOptions = CodeExplorer.configurationOptions.GetConfigurationInfo();
+            commandConfiguration.WalkerPattern.UseRegEx = (bool)ceSingleLineLambdaExpressionUseRegEx.IsChecked;
+            commandConfiguration.WalkerPattern.RegEx = teSingleLineLambdaExpressionRegEx.Text;
+            commandConfiguration.CodeAnalysisOptions = CodeExplorer.configurationOptions.GetConfigurationInfo();
 
             Log.Trace15("Exit", Common.LOG_APPNAME, startTicks);
 
@@ -335,9 +335,9 @@ namespace VNCCodeCommandConsole.User_Interface.User_Controls
             //    (bool)ceMemberAccessExpressionUseRegEx.IsChecked, teMemberAccessExpressionRegEx.Text,
             //    matches, crcMatchesToString, crcMatchesToFullString, tree, walker, CodeExplorer.configurationOptions.GetConfigurationInfo());
 
-            commandConfiguration.UseRegEx = (bool)ceMemberAccessExpressionUseRegEx.IsChecked;
-            commandConfiguration.RegEx = teMemberAccessExpressionRegEx.Text;
-            commandConfiguration.ConfigurationOptions = CodeExplorer.configurationOptions.GetConfigurationInfo();
+            commandConfiguration.WalkerPattern.UseRegEx = (bool)ceMemberAccessExpressionUseRegEx.IsChecked;
+            commandConfiguration.WalkerPattern.RegEx = teMemberAccessExpressionRegEx.Text;
+            commandConfiguration.CodeAnalysisOptions = CodeExplorer.configurationOptions.GetConfigurationInfo();
 
             Log.Trace15("Exit", Common.LOG_APPNAME, startTicks);
 
@@ -350,9 +350,9 @@ namespace VNCCodeCommandConsole.User_Interface.User_Controls
 
             var walker = new VNCSW.VB.SyntaxNode();
 
-            commandConfiguration.UseRegEx = (bool)ceSyntaxNodeUseRegEx.IsChecked;
-            commandConfiguration.RegEx = teSyntaxNodeRegEx.Text;
-            commandConfiguration.ConfigurationOptions = CodeExplorer.configurationOptions.GetConfigurationInfo();
+            commandConfiguration.WalkerPattern.UseRegEx = (bool)ceSyntaxNodeUseRegEx.IsChecked;
+            commandConfiguration.WalkerPattern.RegEx = teSyntaxNodeRegEx.Text;
+            commandConfiguration.CodeAnalysisOptions = CodeExplorer.configurationOptions.GetConfigurationInfo();
 
             Log.Trace15("Exit", Common.LOG_APPNAME, startTicks);
 
@@ -365,9 +365,9 @@ namespace VNCCodeCommandConsole.User_Interface.User_Controls
 
             var walker = new VNCSW.VB.SyntaxToken();
 
-            commandConfiguration.UseRegEx = (bool)ceSyntaxTokenUseRegEx.IsChecked;
-            commandConfiguration.RegEx = teSyntaxTokenRegEx.Text;
-            commandConfiguration.ConfigurationOptions = CodeExplorer.configurationOptions.GetConfigurationInfo();
+            commandConfiguration.WalkerPattern.UseRegEx = (bool)ceSyntaxTokenUseRegEx.IsChecked;
+            commandConfiguration.WalkerPattern.RegEx = teSyntaxTokenRegEx.Text;
+            commandConfiguration.CodeAnalysisOptions = CodeExplorer.configurationOptions.GetConfigurationInfo();
 
             Log.Trace15("Exit", Common.LOG_APPNAME, startTicks);
 
@@ -380,9 +380,9 @@ namespace VNCCodeCommandConsole.User_Interface.User_Controls
 
             var walker = new VNCSW.VB.AsNewClause();
 
-            commandConfiguration.UseRegEx = (bool)ceAsNewClauseUseRegEx.IsChecked;
-            commandConfiguration.RegEx = teAsNewClauseRegEx.Text;
-            commandConfiguration.ConfigurationOptions = CodeExplorer.configurationOptions.GetConfigurationInfo();
+            commandConfiguration.WalkerPattern.UseRegEx = (bool)ceAsNewClauseUseRegEx.IsChecked;
+            commandConfiguration.WalkerPattern.RegEx = teAsNewClauseRegEx.Text;
+            commandConfiguration.CodeAnalysisOptions = CodeExplorer.configurationOptions.GetConfigurationInfo();
 
             return VNCCA.Helpers.VB.InvokeVNCSyntaxWalker(walker, commandConfiguration);
         }
@@ -393,9 +393,9 @@ namespace VNCCodeCommandConsole.User_Interface.User_Controls
             long startTicks = Log.Trace15("Enter", Common.LOG_APPNAME);
             var walker = new VNCSW.VB.SimpleAsClause();
 
-            commandConfiguration.UseRegEx = (bool)ceSimpleAsClauseUseRegEx.IsChecked;
-            commandConfiguration.RegEx = teSimpleAsClauseRegEx.Text;
-            commandConfiguration.ConfigurationOptions = CodeExplorer.configurationOptions.GetConfigurationInfo();
+            commandConfiguration.WalkerPattern.UseRegEx = (bool)ceSimpleAsClauseUseRegEx.IsChecked;
+            commandConfiguration.WalkerPattern.RegEx = teSimpleAsClauseRegEx.Text;
+            commandConfiguration.CodeAnalysisOptions = CodeExplorer.configurationOptions.GetConfigurationInfo();
 
             Log.Trace15("Exit", Common.LOG_APPNAME, startTicks);
 
@@ -408,9 +408,9 @@ namespace VNCCodeCommandConsole.User_Interface.User_Controls
 
             var walker = new VNCSW.VB.ObjectCreationExpression();
 
-            commandConfiguration.UseRegEx = (bool)ceObjectCreationExpressionUseRegEx.IsChecked;
-            commandConfiguration.RegEx = teObjectCreationExpressionRegEx.Text;
-            commandConfiguration.ConfigurationOptions = CodeExplorer.configurationOptions.GetConfigurationInfo();
+            commandConfiguration.WalkerPattern.UseRegEx = (bool)ceObjectCreationExpressionUseRegEx.IsChecked;
+            commandConfiguration.WalkerPattern.RegEx = teObjectCreationExpressionRegEx.Text;
+            commandConfiguration.CodeAnalysisOptions = CodeExplorer.configurationOptions.GetConfigurationInfo();
 
             Log.Trace15("Exit", Common.LOG_APPNAME, startTicks);
 
@@ -423,9 +423,9 @@ namespace VNCCodeCommandConsole.User_Interface.User_Controls
 
             var walker = new VNCSW.VB.SyntaxTrivia();
 
-            commandConfiguration.UseRegEx = (bool)ceSyntaxTriviaUseRegEx.IsChecked;
-            commandConfiguration.RegEx = teSyntaxTriviaRegEx.Text;
-            commandConfiguration.ConfigurationOptions = CodeExplorer.configurationOptions.GetConfigurationInfo();
+            commandConfiguration.WalkerPattern.UseRegEx = (bool)ceSyntaxTriviaUseRegEx.IsChecked;
+            commandConfiguration.WalkerPattern.RegEx = teSyntaxTriviaRegEx.Text;
+            commandConfiguration.CodeAnalysisOptions = CodeExplorer.configurationOptions.GetConfigurationInfo();
 
             Log.Trace15("Exit", Common.LOG_APPNAME, startTicks);
 
@@ -438,9 +438,9 @@ namespace VNCCodeCommandConsole.User_Interface.User_Controls
 
             var walker = new VNCSW.VB.BinaryExpression();
 
-            commandConfiguration.UseRegEx = (bool)ceBinaryExpressionUseRegEx.IsChecked;
-            commandConfiguration.RegEx = teBinaryExpressionRegEx.Text;
-            commandConfiguration.ConfigurationOptions = CodeExplorer.configurationOptions.GetConfigurationInfo();
+            commandConfiguration.WalkerPattern.UseRegEx = (bool)ceBinaryExpressionUseRegEx.IsChecked;
+            commandConfiguration.WalkerPattern.RegEx = teBinaryExpressionRegEx.Text;
+            commandConfiguration.CodeAnalysisOptions = CodeExplorer.configurationOptions.GetConfigurationInfo();
 
             Log.Trace15("Exit", Common.LOG_APPNAME, startTicks);
 
@@ -454,9 +454,9 @@ namespace VNCCodeCommandConsole.User_Interface.User_Controls
             walker.MatchLeft = (bool)ceAssignmentStatementMatchLeft.IsChecked;
             walker.MatchRight = (bool)ceAssignmentStatementMatchRight.IsChecked;
 
-            commandConfiguration.UseRegEx = (bool)ceAssignmentStatementUseRegEx.IsChecked;
-            commandConfiguration.RegEx = teAssignmentStatementRegEx.Text;
-            commandConfiguration.ConfigurationOptions = CodeExplorer.configurationOptions.GetConfigurationInfo();
+            commandConfiguration.WalkerPattern.UseRegEx = (bool)ceAssignmentStatementUseRegEx.IsChecked;
+            commandConfiguration.WalkerPattern.RegEx = teAssignmentStatementRegEx.Text;
+            commandConfiguration.CodeAnalysisOptions = CodeExplorer.configurationOptions.GetConfigurationInfo();
 
             Log.Trace15("Exit", Common.LOG_APPNAME, startTicks);
 
@@ -471,9 +471,9 @@ namespace VNCCodeCommandConsole.User_Interface.User_Controls
 
             walker.HasAttributes = (bool)CodeExplorer.configurationOptions.ceHasAttributes.IsChecked;
 
-            commandConfiguration.UseRegEx = (bool)ceLocalDeclarationStatementUseRegEx.IsChecked;
-            commandConfiguration.RegEx = teLocalDeclarationStatementRegEx.Text;
-            commandConfiguration.ConfigurationOptions = CodeExplorer.configurationOptions.GetConfigurationInfo();
+            commandConfiguration.WalkerPattern.UseRegEx = (bool)ceLocalDeclarationStatementUseRegEx.IsChecked;
+            commandConfiguration.WalkerPattern.RegEx = teLocalDeclarationStatementRegEx.Text;
+            commandConfiguration.CodeAnalysisOptions = CodeExplorer.configurationOptions.GetConfigurationInfo();
 
             Log.Trace15("Exit", Common.LOG_APPNAME, startTicks);
 
@@ -494,9 +494,9 @@ namespace VNCCodeCommandConsole.User_Interface.User_Controls
             walker.FieldNames = (bool)ceStructureFieldsUseRegEx.IsChecked ? teStructureFieldsRegEx.Text : ".*";
             walker.StructureNames = (bool)ceStructuresUseRegEx.IsChecked ? teStructureRegEx.Text : ".*";
 
-            commandConfiguration.UseRegEx = (bool)ceStructuresUseRegEx.IsChecked;
-            commandConfiguration.RegEx = teStructureRegEx.Text;
-            commandConfiguration.ConfigurationOptions = CodeExplorer.configurationOptions.GetConfigurationInfo();
+            commandConfiguration.WalkerPattern.UseRegEx = (bool)ceStructuresUseRegEx.IsChecked;
+            commandConfiguration.WalkerPattern.RegEx = teStructureRegEx.Text;
+            commandConfiguration.CodeAnalysisOptions = CodeExplorer.configurationOptions.GetConfigurationInfo();
 
             // StructureBlock has special (two types) of RegEx.
             walker.InitializeRegEx();
@@ -514,9 +514,9 @@ namespace VNCCodeCommandConsole.User_Interface.User_Controls
 
             walker.HasAttributes = (bool)CodeExplorer.configurationOptions.ceHasAttributes.IsChecked;
 
-            commandConfiguration.UseRegEx = (bool)ceVariableDeclaratorUseRegEx.IsChecked;
-            commandConfiguration.RegEx = teVariableDeclaratorRegEx.Text;
-            commandConfiguration.ConfigurationOptions = CodeExplorer.configurationOptions.GetConfigurationInfo();
+            commandConfiguration.WalkerPattern.UseRegEx = (bool)ceVariableDeclaratorUseRegEx.IsChecked;
+            commandConfiguration.WalkerPattern.RegEx = teVariableDeclaratorRegEx.Text;
+            commandConfiguration.CodeAnalysisOptions = CodeExplorer.configurationOptions.GetConfigurationInfo();
 
             Log.Trace15("Exit", Common.LOG_APPNAME, startTicks);
 
@@ -529,9 +529,9 @@ namespace VNCCodeCommandConsole.User_Interface.User_Controls
 
             var walker = new VNCSW.VB.InvocationExpression();
 
-            commandConfiguration.UseRegEx = (bool)ceInvocationExpressionUseRegEx.IsChecked;
-            commandConfiguration.RegEx = teInvocationExpressionRegEx.Text;
-            commandConfiguration.ConfigurationOptions = CodeExplorer.configurationOptions.GetConfigurationInfo();
+            commandConfiguration.WalkerPattern.UseRegEx = (bool)ceInvocationExpressionUseRegEx.IsChecked;
+            commandConfiguration.WalkerPattern.RegEx = teInvocationExpressionRegEx.Text;
+            commandConfiguration.CodeAnalysisOptions = CodeExplorer.configurationOptions.GetConfigurationInfo();
 
             Log.Trace15("Exit", Common.LOG_APPNAME, startTicks);
 
@@ -544,9 +544,9 @@ namespace VNCCodeCommandConsole.User_Interface.User_Controls
 
             var walker = new VNCSW.VB.ParameterList();
 
-            commandConfiguration.UseRegEx = (bool)ceParameterListUseRegEx.IsChecked;
-            commandConfiguration.RegEx = teParameterListRegEx.Text;
-            commandConfiguration.ConfigurationOptions = CodeExplorer.configurationOptions.GetConfigurationInfo();
+            commandConfiguration.WalkerPattern.UseRegEx = (bool)ceParameterListUseRegEx.IsChecked;
+            commandConfiguration.WalkerPattern.RegEx = teParameterListRegEx.Text;
+            commandConfiguration.CodeAnalysisOptions = CodeExplorer.configurationOptions.GetConfigurationInfo();
 
             Log.Trace15("Exit", Common.LOG_APPNAME, startTicks);
 
@@ -559,9 +559,9 @@ namespace VNCCodeCommandConsole.User_Interface.User_Controls
 
             var walker = new VNCSW.VB.ArgumentList();
 
-            commandConfiguration.UseRegEx = (bool)ceArgumentListUseRegEx.IsChecked;
-            commandConfiguration.RegEx = teArgumentListRegEx.Text;
-            commandConfiguration.ConfigurationOptions = CodeExplorer.configurationOptions.GetConfigurationInfo();
+            commandConfiguration.WalkerPattern.UseRegEx = (bool)ceArgumentListUseRegEx.IsChecked;
+            commandConfiguration.WalkerPattern.RegEx = teArgumentListRegEx.Text;
+            commandConfiguration.CodeAnalysisOptions = CodeExplorer.configurationOptions.GetConfigurationInfo();
 
             Log.Trace15("Exit", Common.LOG_APPNAME, startTicks);
 
@@ -585,9 +585,9 @@ namespace VNCCodeCommandConsole.User_Interface.User_Controls
 
             walker.HasAttributes = (bool)CodeExplorer.configurationOptions.ceHasAttributes.IsChecked;
 
-            commandConfiguration.UseRegEx = (bool)cePropertyStatementUseRegEx.IsChecked;
-            commandConfiguration.RegEx = tePropertyStatementRegEx.Text;
-            commandConfiguration.ConfigurationOptions = CodeExplorer.configurationOptions.GetConfigurationInfo();
+            commandConfiguration.WalkerPattern.UseRegEx = (bool)cePropertyStatementUseRegEx.IsChecked;
+            commandConfiguration.WalkerPattern.RegEx = tePropertyStatementRegEx.Text;
+            commandConfiguration.CodeAnalysisOptions = CodeExplorer.configurationOptions.GetConfigurationInfo();
 
             Log.Trace15("Exit", Common.LOG_APPNAME, startTicks);
 
@@ -623,9 +623,9 @@ namespace VNCCodeCommandConsole.User_Interface.User_Controls
 
             walker.HasAttributes = (bool)CodeExplorer.configurationOptions.ceHasAttributes.IsChecked;
 
-            commandConfiguration.UseRegEx = (bool)ceFieldDeclarationUseRegEx.IsChecked;
-            commandConfiguration.RegEx = teFieldDeclarationRegEx.Text;
-            commandConfiguration.ConfigurationOptions = CodeExplorer.configurationOptions.GetConfigurationInfo();
+            commandConfiguration.WalkerPattern.UseRegEx = (bool)ceFieldDeclarationUseRegEx.IsChecked;
+            commandConfiguration.WalkerPattern.RegEx = teFieldDeclarationRegEx.Text;
+            commandConfiguration.CodeAnalysisOptions = CodeExplorer.configurationOptions.GetConfigurationInfo();
 
             Log.Trace15("Exit", Common.LOG_APPNAME, startTicks);
 
@@ -647,9 +647,9 @@ namespace VNCCodeCommandConsole.User_Interface.User_Controls
                 walker = new VNCSW.VB.ClassStatement();
             }
 
-            commandConfiguration.UseRegEx = (bool)ceClassStatementUseRegEx.IsChecked;
-            commandConfiguration.RegEx = teClassStatementRegEx.Text;
-            commandConfiguration.ConfigurationOptions = CodeExplorer.configurationOptions.GetConfigurationInfo();
+            commandConfiguration.WalkerPattern.UseRegEx = (bool)ceClassStatementUseRegEx.IsChecked;
+            commandConfiguration.WalkerPattern.RegEx = teClassStatementRegEx.Text;
+            commandConfiguration.CodeAnalysisOptions = CodeExplorer.configurationOptions.GetConfigurationInfo();
 
             Log.Trace15("Exit", Common.LOG_APPNAME, startTicks);
 
@@ -671,9 +671,9 @@ namespace VNCCodeCommandConsole.User_Interface.User_Controls
             //    walker, 
             //    CodeExplorer.configurationOptions.GetConfigurationInfo());
 
-            commandConfiguration.UseRegEx = (bool)ceImportsStatementUseRegEx.IsChecked;
-            commandConfiguration.RegEx = teImportsStatementRegEx.Text;
-            commandConfiguration.ConfigurationOptions = CodeExplorer.configurationOptions.GetConfigurationInfo();
+            commandConfiguration.WalkerPattern.UseRegEx = (bool)ceImportsStatementUseRegEx.IsChecked;
+            commandConfiguration.WalkerPattern.RegEx = teImportsStatementRegEx.Text;
+            commandConfiguration.CodeAnalysisOptions = CodeExplorer.configurationOptions.GetConfigurationInfo();
 
             Log.Trace15("Exit", Common.LOG_APPNAME, startTicks);
 
@@ -686,9 +686,9 @@ namespace VNCCodeCommandConsole.User_Interface.User_Controls
 
             VNCSW.VB.VNCVBTypedSyntaxWalkerBase walker = null;
 
-            commandConfiguration.UseRegEx = (bool)ceMethodBlockUseRegEx.IsChecked;
-            commandConfiguration.RegEx = teMethodBlockRegEx.Text;
-            commandConfiguration.ConfigurationOptions = CodeExplorer.configurationOptions.GetConfigurationInfo();
+            commandConfiguration.WalkerPattern.UseRegEx = (bool)ceMethodBlockUseRegEx.IsChecked;
+            commandConfiguration.WalkerPattern.RegEx = teMethodBlockRegEx.Text;
+            commandConfiguration.CodeAnalysisOptions = CodeExplorer.configurationOptions.GetConfigurationInfo();
 
             // TODO(crhodes)
             // Maybe figure out how to suppress showing of block.
@@ -696,7 +696,7 @@ namespace VNCCodeCommandConsole.User_Interface.User_Controls
             //if ((bool)ceShowMethodBlock2.IsChecked)
             //{
             walker = new VNCSW.VB.MethodBlock();
-            //commandConfiguration.ConfigurationOptions.ShowAnalysisCRC = true;
+            //commandConfiguration.CodeAnalysisOptions.ShowAnalysisCRC = true;
             //}
             //else
             //{
@@ -725,14 +725,14 @@ namespace VNCCodeCommandConsole.User_Interface.User_Controls
 
             VNCSW.VB.VNCVBTypedSyntaxWalkerBase walker = null;
 
-            commandConfiguration.UseRegEx = (bool)ceMethodStatementUseRegEx.IsChecked;
-            commandConfiguration.RegEx = teMethodStatementRegEx.Text;
-            commandConfiguration.ConfigurationOptions = CodeExplorer.configurationOptions.GetConfigurationInfo();
+            commandConfiguration.WalkerPattern.UseRegEx = (bool)ceMethodStatementUseRegEx.IsChecked;
+            commandConfiguration.WalkerPattern.RegEx = teMethodStatementRegEx.Text;
+            commandConfiguration.CodeAnalysisOptions = CodeExplorer.configurationOptions.GetConfigurationInfo();
 
             if ((bool)ceShowMethodBlock.IsChecked)
             {
                 walker = new VNCSW.VB.MethodBlock();
-                //commandConfiguration.ConfigurationOptions.ShowAnalysisCRC = true;
+                //commandConfiguration.CodeAnalysisOptions.ShowAnalysisCRC = true;
             }
             else
             {
@@ -771,9 +771,9 @@ namespace VNCCodeCommandConsole.User_Interface.User_Controls
             }
 
 
-            commandConfiguration.UseRegEx = (bool)ceModuleStatementUseRegEx.IsChecked;
-            commandConfiguration.RegEx = teModuleStatementRegEx.Text;
-            commandConfiguration.ConfigurationOptions = CodeExplorer.configurationOptions.GetConfigurationInfo();
+            commandConfiguration.WalkerPattern.UseRegEx = (bool)ceModuleStatementUseRegEx.IsChecked;
+            commandConfiguration.WalkerPattern.RegEx = teModuleStatementRegEx.Text;
+            commandConfiguration.CodeAnalysisOptions = CodeExplorer.configurationOptions.GetConfigurationInfo();
 
             Log.Trace15("Exit", Common.LOG_APPNAME, startTicks);
 
@@ -792,9 +792,9 @@ namespace VNCCodeCommandConsole.User_Interface.User_Controls
             //    (bool)ceNamespaceStatementUseRegEx.IsChecked, teNamespaceStatementRegEx.Text,
             //    matches, crcMatchesToString, crcMatchesToFullString, tree, walker, CodeExplorer.configurationOptions.GetConfigurationInfo());
 
-            commandConfiguration.UseRegEx = (bool)ceNamespaceStatementUseRegEx.IsChecked;
-            commandConfiguration.RegEx = teNamespaceStatementRegEx.Text;
-            commandConfiguration.ConfigurationOptions = CodeExplorer.configurationOptions.GetConfigurationInfo();
+            commandConfiguration.WalkerPattern.UseRegEx = (bool)ceNamespaceStatementUseRegEx.IsChecked;
+            commandConfiguration.WalkerPattern.RegEx = teNamespaceStatementRegEx.Text;
+            commandConfiguration.CodeAnalysisOptions = CodeExplorer.configurationOptions.GetConfigurationInfo();
 
             Log.Trace15("Exit", Common.LOG_APPNAME, startTicks);
 

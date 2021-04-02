@@ -128,7 +128,7 @@ namespace VNCCodeCommandConsole.User_Interface.User_Controls
 
             rewriter.Messages = commandConfiguration.Results;
 
-            rewriter._configurationOptions = commandConfiguration.ConfigurationOptions;
+            rewriter._configurationOptions = commandConfiguration.CodeAnalysisOptions;
 
             SyntaxNode newNode = rewriter.Visit(commandConfiguration.SyntaxTree.GetRoot());
 
@@ -147,7 +147,7 @@ namespace VNCCodeCommandConsole.User_Interface.User_Controls
 
             rewriter.Messages = commandConfiguration.Results;
 
-            rewriter._configurationOptions = commandConfiguration.ConfigurationOptions;
+            rewriter._configurationOptions = commandConfiguration.CodeAnalysisOptions;
 
             SyntaxNode newNode = rewriter.Visit(commandConfiguration.SyntaxTree.GetRoot());
 
@@ -185,7 +185,7 @@ namespace VNCCodeCommandConsole.User_Interface.User_Controls
 
             rewriter.Messages = commandConfiguration.Results;
 
-            rewriter._configurationOptions = commandConfiguration.ConfigurationOptions;
+            rewriter._configurationOptions = commandConfiguration.CodeAnalysisOptions;
 
             SyntaxNode newNode = rewriter.Visit(commandConfiguration.SyntaxTree.GetRoot());
 
@@ -204,7 +204,7 @@ namespace VNCCodeCommandConsole.User_Interface.User_Controls
 
             rewriter.Messages = commandConfiguration.Results;
 
-            rewriter._configurationOptions = commandConfiguration.ConfigurationOptions;
+            rewriter._configurationOptions = commandConfiguration.CodeAnalysisOptions;
 
             SyntaxNode newNode = rewriter.Visit(commandConfiguration.SyntaxTree.GetRoot());
 
@@ -223,7 +223,7 @@ namespace VNCCodeCommandConsole.User_Interface.User_Controls
 
         //    rewriter.Messages = commandConfiguration.Results;
 
-        //    rewriter._configurationOptions = commandConfiguration.ConfigurationOptions;
+        //    rewriter._configurationOptions = commandConfiguration.CodeAnalysisOptions;
 
         //    SyntaxNode newNode = rewriter.Visit(commandConfiguration.SyntaxTree.GetRoot());
 
@@ -241,7 +241,7 @@ namespace VNCCodeCommandConsole.User_Interface.User_Controls
         //    var rewriter = new VNC.CodeAnalysis.SyntaxRewriters.VB.WrapSQLExecuteXCallsInDALHelper(
         //        commandConfiguration.TargetPattern);
 
-        //    rewriter._configurationOptions = commandConfiguration.ConfigurationOptions;
+        //    rewriter._configurationOptions = commandConfiguration.CodeAnalysisOptions;
 
         //    rewriter.Messages = commandConfiguration.Results;
 
@@ -260,7 +260,7 @@ namespace VNCCodeCommandConsole.User_Interface.User_Controls
 
         //        var rewriter = new VNC.CodeAnalysis.SyntaxRewriters.VB.WrapSQLFillCallsInDALHelper(commandConfiguration.TargetPattern);
 
-        //        rewriter._configurationOptions = commandConfiguration.ConfigurationOptions;
+        //        rewriter._configurationOptions = commandConfiguration.CodeAnalysisOptions;
 
         //        rewriter.Messages = commandConfiguration.Results;
 
@@ -332,9 +332,9 @@ namespace VNCCodeCommandConsole.User_Interface.User_Controls
                             rewriteFileCommandConfiguration.FilePath = filePath;
                             rewriteFileCommandConfiguration.Replacements = replacements;
 
-                            rewriteFileCommandConfiguration.UseRegEx = (bool)ceReplacementTargetUseRegEx.IsChecked;
+                            rewriteFileCommandConfiguration.WalkerPattern.UseRegEx = (bool)ceReplacementTargetUseRegEx.IsChecked;
                             rewriteFileCommandConfiguration.TargetPattern = teTargetInvocationExpression.Text;
-                            rewriteFileCommandConfiguration.ConfigurationOptions = CodeExplorer.configurationOptions.GetConfigurationInfo();
+                            rewriteFileCommandConfiguration.CodeAnalysisOptions = CodeExplorer.configurationOptions.GetConfigurationInfo();
 
                             sbFileResults = command(rewriteFileCommandConfiguration, out performedReplacement);
                             //sbFileResults = command(sbFileResults, tree, filePath, targetInvocationExpression, newInvocationExpression, replacements, out performedReplacement);

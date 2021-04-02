@@ -131,9 +131,9 @@ namespace VNCCodeCommandConsole.User_Interface.User_Controls
             //    (bool)ceInvocationExpressionInTryCatchUseRegEx.IsChecked, teInvocationExpressionInTryCatchRegEx.Text,
             //    matches, crcMatchesToString, crcMatchesToFullString, tree, walker, CodeExplorer.configurationOptions.GetConfigurationInfo());
 
-            commandConfiguration.UseRegEx = (bool)ceInvocationExpressionInTryCatchUseRegEx.IsChecked;
-            commandConfiguration.RegEx = teInvocationExpressionInTryCatchRegEx.Text;
-            commandConfiguration.ConfigurationOptions = CodeExplorer.configurationOptions.GetConfigurationInfo();
+            commandConfiguration.WalkerPattern.UseRegEx = (bool)ceInvocationExpressionInTryCatchUseRegEx.IsChecked;
+            commandConfiguration.WalkerPattern.RegEx = teInvocationExpressionInTryCatchRegEx.Text;
+            commandConfiguration.CodeAnalysisOptions = CodeExplorer.configurationOptions.GetConfigurationInfo();
 
             return VNCCA.Helpers.VB.InvokeVNCSyntaxWalker(walker,
                 commandConfiguration);
@@ -254,9 +254,9 @@ namespace VNCCodeCommandConsole.User_Interface.User_Controls
             //    (bool)ceVariablesUseRegEx.IsChecked, teVariableRegEx.Text,
             //    matches, crcMatchesToString, crcMatchesToFullString, tree, walker, CodeExplorer.configurationOptions.GetConfigurationInfo());
 
-            commandConfiguration.UseRegEx = (bool)ceVariablesUseRegEx.IsChecked;
-            commandConfiguration.RegEx = teVariableRegEx.Text;
-            commandConfiguration.ConfigurationOptions = CodeExplorer.configurationOptions.GetConfigurationInfo();
+            commandConfiguration.WalkerPattern.UseRegEx = (bool)ceVariablesUseRegEx.IsChecked;
+            commandConfiguration.WalkerPattern.RegEx = teVariableRegEx.Text;
+            commandConfiguration.CodeAnalysisOptions = CodeExplorer.configurationOptions.GetConfigurationInfo();
 
             return VNCCA.Helpers.VB.InvokeVNCSyntaxWalker(walker,
                 commandConfiguration);

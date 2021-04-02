@@ -109,7 +109,7 @@ namespace VNCCodeCommandConsole.User_Interface.User_Controls
 
             var rewriter = new VNC.CodeAnalysis.SyntaxRewriters.VB.RewriteStopOrEndStatement();
 
-            rewriter._configurationOptions = commandConfiguration.ConfigurationOptions;
+            rewriter._configurationOptions = commandConfiguration.CodeAnalysisOptions;
 
             rewriter.Messages = commandConfiguration.Results;
             rewriter.Replacements = commandConfiguration.Replacements;
@@ -130,7 +130,7 @@ namespace VNCCodeCommandConsole.User_Interface.User_Controls
             var rewriter = new VNC.CodeAnalysis.SyntaxRewriters.VB.RewriteCellFormatFontColor(
                 commandConfiguration.TargetPattern);
 
-            rewriter._configurationOptions = commandConfiguration.ConfigurationOptions;
+            rewriter._configurationOptions = commandConfiguration.CodeAnalysisOptions;
 
             rewriter.Messages = commandConfiguration.Results;
             rewriter.Replacements = commandConfiguration.Replacements;
@@ -154,7 +154,7 @@ namespace VNCCodeCommandConsole.User_Interface.User_Controls
             rewriter.Messages = commandConfiguration.Results;
             rewriter.Replacements = commandConfiguration.Replacements;
 
-            rewriter._configurationOptions = commandConfiguration.ConfigurationOptions;
+            rewriter._configurationOptions = commandConfiguration.CodeAnalysisOptions;
 
             SyntaxNode newNode = rewriter.Visit(commandConfiguration.SyntaxTree.GetRoot());
 
@@ -172,7 +172,7 @@ namespace VNCCodeCommandConsole.User_Interface.User_Controls
             var rewriter = new VNC.CodeAnalysis.SyntaxRewriters.VB.WrapSQLExecuteXCallsInDALHelper(
                 commandConfiguration.TargetPattern);
 
-            rewriter._configurationOptions = commandConfiguration.ConfigurationOptions;
+            rewriter._configurationOptions = commandConfiguration.CodeAnalysisOptions;
 
             rewriter.Messages = commandConfiguration.Results;
             rewriter.Replacements = commandConfiguration.Replacements;
@@ -193,7 +193,7 @@ namespace VNCCodeCommandConsole.User_Interface.User_Controls
 
                 var rewriter = new VNC.CodeAnalysis.SyntaxRewriters.VB.WrapSQLFillCallsInDALHelper(commandConfiguration.TargetPattern);
 
-                rewriter._configurationOptions = commandConfiguration.ConfigurationOptions;
+                rewriter._configurationOptions = commandConfiguration.CodeAnalysisOptions;
 
                 rewriter.Messages = commandConfiguration.Results;
                 rewriter.Replacements = commandConfiguration.Replacements;
@@ -265,11 +265,11 @@ namespace VNCCodeCommandConsole.User_Interface.User_Controls
                             rewriteFileCommandConfiguration.FilePath = filePath;
                             rewriteFileCommandConfiguration.Replacements = replacements;
 
-                            rewriteFileCommandConfiguration.UseRegEx = (bool)ceReplacementTargetUseRegEx.IsChecked;
+                            rewriteFileCommandConfiguration.WalkerPattern.UseRegEx = (bool)ceReplacementTargetUseRegEx.IsChecked;
                             rewriteFileCommandConfiguration.TargetPattern = teTargetExpression.Text;
                             rewriteFileCommandConfiguration.ReplacementPattern = teReplacementInvocationExpression.Text;
 
-                            rewriteFileCommandConfiguration.ConfigurationOptions = CodeExplorer.configurationOptions.GetConfigurationInfo();
+                            rewriteFileCommandConfiguration.CodeAnalysisOptions = CodeExplorer.configurationOptions.GetConfigurationInfo();
 
                             sbFileResults = command(rewriteFileCommandConfiguration, out performedReplacement);
                             //sbFileResults = command(sbFileResults, tree, filePath, targetInvocationExpression, newInvocationExpression, replacements, out performedReplacement);
